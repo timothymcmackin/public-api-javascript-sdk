@@ -4,8 +4,6 @@ permalink: docs/AudioDataList
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes

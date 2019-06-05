@@ -4,8 +4,6 @@ permalink: docs/TestValidateQuery
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes

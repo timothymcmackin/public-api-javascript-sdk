@@ -4,8 +4,6 @@ permalink: docs/VideoDataList
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes

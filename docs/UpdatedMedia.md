@@ -4,8 +4,6 @@ permalink: docs/UpdatedMedia
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes

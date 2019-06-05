@@ -4,8 +4,6 @@ permalink: docs/LicenseEditorialContentResultDataList
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes

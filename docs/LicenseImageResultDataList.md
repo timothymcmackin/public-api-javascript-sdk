@@ -4,8 +4,6 @@ permalink: docs/LicenseImageResultDataList
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes

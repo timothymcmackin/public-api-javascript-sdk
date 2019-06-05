@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 This endpoint shows information about a single contributor, including contributor type, equipment they use, and other attributes.
 
-### Example {#getContributor-example}
+### Example
 
 ```javascript
 const sstk = require('shutterstock-api');
@@ -45,29 +45,29 @@ api.getContributor(contributor_id)
 
 ```
 
-### Parameters {#getContributor-parameters}
+### Parameters
 
 
 Name | Type | Description
 ------------- | ------------- | -------------
  contributor_id (required) | String| Contributor ID 
 
-### Accepted authentication {#getContributor-auth}
+### Accepted authentication
 
 
 - OAuth (No scope required.)
 
-### HTTP request headers {#getContributor-headers}
+### HTTP request headers
 
 
 
 - Accept: application/json
 
-### Return type {#getContributor-return}
+### Return type
 
 [ContributorProfile](ContributorProfile)
 
-### Example response {#getContributor-response}
+### Example response
 
 ```
 {
@@ -100,7 +100,7 @@ Name | Type | Description
 
 This endpoint lists the IDs of items in a contributor's collection and the date that each was added.
 
-### Example {#getContributorCollectionItems-example}
+### Example
 
 ```javascript
 const sstk = require('shutterstock-api');
@@ -130,7 +130,7 @@ api.getContributorCollectionItems(contributor_id, id, queryParams)
 
 ```
 
-### Parameters {#getContributorCollectionItems-parameters}
+### Parameters
 
 
 Name | Type | Description
@@ -141,22 +141,22 @@ Name | Type | Description
  per_page | Number| Number of results per page, defaults to 20 
  sort | String| Sort order <br/><br/>Valid values: "newest", "oldest"
 
-### Accepted authentication {#getContributorCollectionItems-auth}
+### Accepted authentication
 
 
 - OAuth (No scope required.)
 
-### HTTP request headers {#getContributorCollectionItems-headers}
+### HTTP request headers
 
 
 
 - Accept: application/json
 
-### Return type {#getContributorCollectionItems-return}
+### Return type
 
 [CollectionItemDataList](CollectionItemDataList)
 
-### Example response {#getContributorCollectionItems-response}
+### Example response
 
 ```
 {
@@ -182,7 +182,7 @@ Name | Type | Description
 
 This endpoint gets more detailed information about a contributor's collection, including its cover image, timestamps for its creation, and most recent update. To get the items in collections, use GET /contributors/{contributor_id}/collections/{id}/items.
 
-### Example {#getContributorCollections-example}
+### Example
 
 ```javascript
 const sstk = require('shutterstock-api');
@@ -207,7 +207,7 @@ api.getContributorCollections(contributor_id, id)
 
 ```
 
-### Parameters {#getContributorCollections-parameters}
+### Parameters
 
 
 Name | Type | Description
@@ -215,22 +215,22 @@ Name | Type | Description
  contributor_id (required) | String| Contributor ID 
  id (required) | String| Collection ID that belongs to the contributor 
 
-### Accepted authentication {#getContributorCollections-auth}
+### Accepted authentication
 
 
 - OAuth (No scope required.)
 
-### HTTP request headers {#getContributorCollections-headers}
+### HTTP request headers
 
 
 
 - Accept: application/json
 
-### Return type {#getContributorCollections-return}
+### Return type
 
 [Collection](Collection)
 
-### Example response {#getContributorCollections-response}
+### Example response
 
 ```
 {
@@ -258,7 +258,7 @@ Name | Type | Description
 
 This endpoint lists collections based on contributor ID.
 
-### Example {#getContributorCollectionsList-example}
+### Example
 
 ```javascript
 const sstk = require('shutterstock-api');
@@ -284,7 +284,7 @@ api.getContributorCollectionsList(contributor_id, queryParams)
 
 ```
 
-### Parameters {#getContributorCollectionsList-parameters}
+### Parameters
 
 
 Name | Type | Description
@@ -292,22 +292,22 @@ Name | Type | Description
  contributor_id (required) | String| Contributor ID 
  sort | String| Sort order <br/><br/>Valid values: "newest", "last_updated", "item_count"
 
-### Accepted authentication {#getContributorCollectionsList-auth}
+### Accepted authentication
 
 
 - OAuth (No scope required.)
 
-### HTTP request headers {#getContributorCollectionsList-headers}
+### HTTP request headers
 
 
 
 - Accept: application/json
 
-### Return type {#getContributorCollectionsList-return}
+### Return type
 
 [CollectionDataList](CollectionDataList)
 
-### Example response {#getContributorCollectionsList-response}
+### Example response
 
 ```
 {
@@ -353,7 +353,7 @@ Name | Type | Description
 
 This endpoint lists information about one or more contributors, including contributor type, equipment they use and other attributes.
 
-### Example {#getContributorList-example}
+### Example
 
 ```javascript
 const sstk = require('shutterstock-api');
@@ -376,29 +376,29 @@ api.getContributorList(id)
 
 ```
 
-### Parameters {#getContributorList-parameters}
+### Parameters
 
 
 Name | Type | Description
 ------------- | ------------- | -------------
  id (required) | [[String]](String)| One or more contributor IDs 
 
-### Accepted authentication {#getContributorList-auth}
+### Accepted authentication
 
 
 - OAuth (No scope required.)
 
-### HTTP request headers {#getContributorList-headers}
+### HTTP request headers
 
 
 
 - Accept: application/json
 
-### Return type {#getContributorList-return}
+### Return type
 
 [ContributorProfileDataList](ContributorProfileDataList)
 
-### Example response {#getContributorList-response}
+### Example response
 
 ```
 {

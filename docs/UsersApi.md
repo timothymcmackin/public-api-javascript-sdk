@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 **Register user**
 
-### Example {#createUser-example}
+### Example
 
 ```javascript
 const sstk = require('shutterstock-api');
@@ -42,29 +42,29 @@ api.createUser(body)
 
 ```
 
-### Parameters {#createUser-parameters}
+### Parameters
 
 
 Name | Type | Description
 ------------- | ------------- | -------------
  body (required) | [UserPostRequest](UserPostRequest)| User details 
 
-### Accepted authentication {#createUser-auth}
+### Accepted authentication
 
 
 - OAuth (No scope required.)
 
-### HTTP request headers {#createUser-headers}
+### HTTP request headers
 
 
 - Content-Type: application/json
 - Accept: application/json
 
-### Return type {#createUser-return}
+### Return type
 
 [UserPostResponse](UserPostResponse)
 
-### Example response {#createUser-response}
+### Example response
 
 ```
 {
@@ -78,7 +78,7 @@ Name | Type | Description
 
 **Get access token details**
 
-### Example {#getAccessToken-example}
+### Example
 
 ```javascript
 const sstk = require('shutterstock-api');
@@ -97,26 +97,26 @@ api.getAccessToken()
 
 ```
 
-### Parameters {#getAccessToken-parameters}
+### Parameters
 
 This endpoint does not accept any parameters.
 
-### Accepted authentication {#getAccessToken-auth}
+### Accepted authentication
 
 
 - OAuth (No scope required.)
 
-### HTTP request headers {#getAccessToken-headers}
+### HTTP request headers
 
 
 
 - Accept: application/json
 
-### Return type {#getAccessToken-return}
+### Return type
 
 [AccessTokenDetails](AccessTokenDetails)
 
-### Example response {#getAccessToken-response}
+### Example response
 
 ```
 {
@@ -138,7 +138,7 @@ This endpoint does not accept any parameters.
 
 **Get user details**
 
-### Example {#getUser-example}
+### Example
 
 ```javascript
 const sstk = require('shutterstock-api');
@@ -157,28 +157,28 @@ api.getUser()
 
 ```
 
-### Parameters {#getUser-parameters}
+### Parameters
 
 This endpoint does not accept any parameters.
 
-### Accepted authentication {#getUser-auth}
+### Accepted authentication
 
 
 - OAuth required scopes:
   - user.view
 
 
-### HTTP request headers {#getUser-headers}
+### HTTP request headers
 
 
 
 - Accept: application/json
 
-### Return type {#getUser-return}
+### Return type
 
 [UserDetails](UserDetails)
 
-### Example response {#getUser-response}
+### Example response
 
 ```
 {
@@ -206,7 +206,7 @@ This endpoint does not accept any parameters.
 
 **List user subscriptions**
 
-### Example {#getUserSubsciptionList-example}
+### Example
 
 ```javascript
 const sstk = require('shutterstock-api');
@@ -225,28 +225,28 @@ api.getUserSubsciptionList()
 
 ```
 
-### Parameters {#getUserSubsciptionList-parameters}
+### Parameters
 
 This endpoint does not accept any parameters.
 
-### Accepted authentication {#getUserSubsciptionList-auth}
+### Accepted authentication
 
 
 - OAuth required scopes:
   - purchases.view
 
 
-### HTTP request headers {#getUserSubsciptionList-headers}
+### HTTP request headers
 
 
 
 - Accept: application/json
 
-### Return type {#getUserSubsciptionList-return}
+### Return type
 
 [SubscriptionDataList](SubscriptionDataList)
 
-### Example response {#getUserSubsciptionList-response}
+### Example response
 
 ```
 {

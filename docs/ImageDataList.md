@@ -4,8 +4,6 @@ permalink: docs/ImageDataList
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes

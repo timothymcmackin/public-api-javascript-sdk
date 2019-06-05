@@ -4,8 +4,6 @@ permalink: docs/Allotment
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes

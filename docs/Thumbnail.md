@@ -4,8 +4,6 @@ permalink: docs/Thumbnail
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes

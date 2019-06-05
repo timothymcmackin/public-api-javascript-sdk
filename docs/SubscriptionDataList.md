@@ -4,8 +4,6 @@ permalink: docs/SubscriptionDataList
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes

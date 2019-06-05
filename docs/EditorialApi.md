@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 This endpoint shows information about an editorial image, including a URL to a preview image and the sizes that it is available in.
 
-### Example {#getEditorialImage-example}
+### Example
 
 ```javascript
 const sstk = require('shutterstock-api');
@@ -51,7 +51,7 @@ api.getEditorialImage(id, country)
 
 ```
 
-### Parameters {#getEditorialImage-parameters}
+### Parameters
 
 
 Name | Type | Description
@@ -59,22 +59,22 @@ Name | Type | Description
  id (required) | String| Editorial ID 
  country (required) | String| Returns only if the content is available for distribution in a certain country; specify with 3-letter country code 
 
-### Accepted authentication {#getEditorialImage-auth}
+### Accepted authentication
 
 - Basic
 - OAuth (No scope required.)
 
-### HTTP request headers {#getEditorialImage-headers}
+### HTTP request headers
 
 
 
 - Accept: application/json
 
-### Return type {#getEditorialImage-return}
+### Return type
 
 [EditorialContent](EditorialContent)
 
-### Example response {#getEditorialImage-response}
+### Example response
 
 ```
 {
@@ -149,7 +149,7 @@ Name | Type | Description
 
 **Get editorial livefeed**
 
-### Example {#getEditorialLivefeed-example}
+### Example
 
 ```javascript
 const sstk = require('shutterstock-api');
@@ -177,7 +177,7 @@ api.getEditorialLivefeed(id, country)
 
 ```
 
-### Parameters {#getEditorialLivefeed-parameters}
+### Parameters
 
 
 Name | Type | Description
@@ -185,22 +185,22 @@ Name | Type | Description
  id (required) | String| Editorial livefeed ID; must be an URI encoded string 
  country (required) | String| Returns only if the livefeed is available for distribution in a certain country; specify with 3-letter country code 
 
-### Accepted authentication {#getEditorialLivefeed-auth}
+### Accepted authentication
 
 - Basic
 - OAuth (No scope required.)
 
-### HTTP request headers {#getEditorialLivefeed-headers}
+### HTTP request headers
 
 
 
 - Accept: application/json
 
-### Return type {#getEditorialLivefeed-return}
+### Return type
 
 [EditorialLivefeed](EditorialLivefeed)
 
-### Example response {#getEditorialLivefeed-response}
+### Example response
 
 ```
 {
@@ -223,7 +223,7 @@ Name | Type | Description
 
 **Get editorial livefeed items**
 
-### Example {#getEditorialLivefeedItems-example}
+### Example
 
 ```javascript
 const sstk = require('shutterstock-api');
@@ -251,7 +251,7 @@ api.getEditorialLivefeedItems(id, country)
 
 ```
 
-### Parameters {#getEditorialLivefeedItems-parameters}
+### Parameters
 
 
 Name | Type | Description
@@ -259,22 +259,22 @@ Name | Type | Description
  id (required) | String| Editorial livefeed ID; must be an URI encoded string 
  country (required) | String| Returns only if the livefeed items are available for distribution in a certain country; specify with 3-letter country code 
 
-### Accepted authentication {#getEditorialLivefeedItems-auth}
+### Accepted authentication
 
 - Basic
 - OAuth (No scope required.)
 
-### HTTP request headers {#getEditorialLivefeedItems-headers}
+### HTTP request headers
 
 
 
 - Accept: application/json
 
-### Return type {#getEditorialLivefeedItems-return}
+### Return type
 
 [EditorialContentDataList](EditorialContentDataList)
 
-### Example response {#getEditorialLivefeedItems-response}
+### Example response
 
 ```
 {
@@ -431,7 +431,7 @@ Name | Type | Description
 
 **Get editorial livefeed list**
 
-### Example {#getEditorialLivefeedList-example}
+### Example
 
 ```javascript
 const sstk = require('shutterstock-api');
@@ -461,7 +461,7 @@ api.getEditorialLivefeedList(country, queryParams)
 
 ```
 
-### Parameters {#getEditorialLivefeedList-parameters}
+### Parameters
 
 
 Name | Type | Description
@@ -470,22 +470,22 @@ Name | Type | Description
  page | Number| Page number, defaults to 1 
  per_page | Number| Number of results per page, defaults to 20, defaults to 20 
 
-### Accepted authentication {#getEditorialLivefeedList-auth}
+### Accepted authentication
 
 - Basic
 - OAuth (No scope required.)
 
-### HTTP request headers {#getEditorialLivefeedList-headers}
+### HTTP request headers
 
 
 
 - Accept: application/json
 
-### Return type {#getEditorialLivefeedList-return}
+### Return type
 
 [EditorialLivefeedList](EditorialLivefeedList)
 
-### Example response {#getEditorialLivefeedList-response}
+### Example response
 
 ```
 {
@@ -527,7 +527,7 @@ Name | Type | Description
 
 This endpoint gets licenses for one or more editorial images. You must specify the country and one or more editorial images to license.
 
-### Example {#licenseEditorialImage-example}
+### Example
 
 ```javascript
 const sstk = require("shutterstock-api");
@@ -557,31 +557,31 @@ editorialApi.licenseEditorialImage(body)
 ```
 
 
-### Parameters {#licenseEditorialImage-parameters}
+### Parameters
 
 
 Name | Type | Description
 ------------- | ------------- | -------------
  body (required) | [LicenseEditorialContentRequest](LicenseEditorialContentRequest)| License editorial content 
 
-### Accepted authentication {#licenseEditorialImage-auth}
+### Accepted authentication
 
 
 - OAuth required scopes:
   - licenses.create
 
 
-### HTTP request headers {#licenseEditorialImage-headers}
+### HTTP request headers
 
 
 - Content-Type: application/json
 - Accept: application/json
 
-### Return type {#licenseEditorialImage-return}
+### Return type
 
 [LicenseEditorialContentResultDataList](LicenseEditorialContentResultDataList)
 
-### Example response {#licenseEditorialImage-response}
+### Example response
 
 ```
 {
@@ -628,7 +628,7 @@ Name | Type | Description
 
 This endpoint searches for editorial images. If you specify more than one search parameter, the API uses an AND condition. Array parameters can be specified multiple times; in this case, the API uses an AND or an OR condition with those values, depending on the parameter. You can also filter search terms out in the `query` parameter by prefixing the term with NOT.
 
-### Example {#searchEditorial-example}
+### Example
 
 ```javascript
 const sstk = require("shutterstock-api");
@@ -657,7 +657,7 @@ editorialApi.searchEditorial(country, queryParams)
 ```
 
 
-### Parameters {#searchEditorial-parameters}
+### Parameters
 
 
 Name | Type | Description
@@ -672,22 +672,22 @@ Name | Type | Description
  per_page | Number| Number of results per page, defaults to 20, defaults to 20 
  cursor | String| The cursor of the page with which to start fetching results; this cursor is returned from previous requests 
 
-### Accepted authentication {#searchEditorial-auth}
+### Accepted authentication
 
 - Basic
 - OAuth (No scope required.)
 
-### HTTP request headers {#searchEditorial-headers}
+### HTTP request headers
 
 
 
 - Accept: application/json
 
-### Return type {#searchEditorial-return}
+### Return type
 
 [EditorialSearchResults](EditorialSearchResults)
 
-### Example response {#searchEditorial-response}
+### Example response
 
 ```
 {

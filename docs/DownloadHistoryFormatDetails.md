@@ -4,8 +4,6 @@ permalink: docs/DownloadHistoryFormatDetails
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes

@@ -4,8 +4,6 @@ permalink: docs/DownloadHistoryDataList
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes

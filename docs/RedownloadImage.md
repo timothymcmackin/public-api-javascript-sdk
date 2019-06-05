@@ -4,8 +4,6 @@ permalink: docs/RedownloadImage
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes
@@ -16,7 +14,8 @@ Name | Type | Description | Notes
 **verification_code** | **String** | (Deprecated) | [optional] 
 
 
-## Enum: SizeEnum {#SizeEnum}
+<a name="SizeEnum"></a>
+## Enum: SizeEnum
 
 
 * `small` (value: `"small"`)

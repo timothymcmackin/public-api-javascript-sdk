@@ -4,8 +4,6 @@ permalink: docs/ImageSizeDetails
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes

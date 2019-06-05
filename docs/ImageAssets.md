@@ -4,8 +4,6 @@ permalink: docs/ImageAssets
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes

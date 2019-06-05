@@ -4,8 +4,6 @@ permalink: docs/UpdatedMediaDataList
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes

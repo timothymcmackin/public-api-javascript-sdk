@@ -4,8 +4,6 @@ permalink: docs/LicenseVideo
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes
@@ -21,7 +19,8 @@ Name | Type | Description | Notes
 **video_id** | **String** | ID of the video being licensed | 
 
 
-## Enum: SizeEnum {#SizeEnum}
+<a name="SizeEnum"></a>
+## Enum: SizeEnum
 
 
 * `web` (value: `"web"`)

@@ -4,8 +4,6 @@ permalink: docs/Collection
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes

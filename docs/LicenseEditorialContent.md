@@ -4,8 +4,6 @@ permalink: docs/LicenseEditorialContent
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes
@@ -16,7 +14,8 @@ Name | Type | Description | Notes
 **size** | **String** | Asset size to download, default is original | [optional] [default to &#39;original&#39;]
 
 
-## Enum: SizeEnum {#SizeEnum}
+<a name="SizeEnum"></a>
+## Enum: SizeEnum
 
 
 * `small` (value: `"small"`)

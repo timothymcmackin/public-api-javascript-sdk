@@ -4,8 +4,6 @@ permalink: docs/Cookie
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes

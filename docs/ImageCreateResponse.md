@@ -4,8 +4,6 @@ permalink: docs/ImageCreateResponse
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes

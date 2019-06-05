@@ -4,8 +4,6 @@ permalink: docs/ContributorProfileSocialMedia
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes

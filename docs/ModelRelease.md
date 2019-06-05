@@ -4,8 +4,6 @@ permalink: docs/ModelRelease
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes

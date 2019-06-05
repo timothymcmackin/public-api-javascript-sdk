@@ -4,8 +4,6 @@ permalink: docs/LicenseAudioResult
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes

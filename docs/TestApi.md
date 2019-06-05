@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 **Echo text**
 
-### Example {#echo-example}
+### Example
 
 ```javascript
 const sstk = require('shutterstock-api');
@@ -38,28 +38,28 @@ api.echo(queryParams)
 
 ```
 
-### Parameters {#echo-parameters}
+### Parameters
 
 
 Name | Type | Description
 ------------- | ------------- | -------------
  text | String| Text to echo, defaults to ok 
 
-### Accepted authentication {#echo-auth}
+### Accepted authentication
 
 No authentication required.
 
-### HTTP request headers {#echo-headers}
+### HTTP request headers
 
 
 
 - Accept: application/json
 
-### Return type {#echo-return}
+### Return type
 
 [TestEcho](TestEcho)
 
-### Example response {#echo-response}
+### Example response
 
 ```
 {
@@ -73,7 +73,7 @@ No authentication required.
 
 **Validate input**
 
-### Example {#validate-example}
+### Example
 
 ```javascript
 const sstk = require('shutterstock-api');
@@ -97,7 +97,7 @@ api.validate(id, queryParams)
 
 ```
 
-### Parameters {#validate-parameters}
+### Parameters
 
 
 Name | Type | Description
@@ -106,21 +106,21 @@ Name | Type | Description
  tag | [[String]](String)| List of tags 
  user_agent | String| User agent 
 
-### Accepted authentication {#validate-auth}
+### Accepted authentication
 
 No authentication required.
 
-### HTTP request headers {#validate-headers}
+### HTTP request headers
 
 
 
 - Accept: application/json
 
-### Return type {#validate-return}
+### Return type
 
 [TestValidate](TestValidate)
 
-### Example response {#validate-response}
+### Example response
 
 ```
 {

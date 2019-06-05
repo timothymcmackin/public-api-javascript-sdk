@@ -4,8 +4,6 @@ permalink: docs/UserPostResponse
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes

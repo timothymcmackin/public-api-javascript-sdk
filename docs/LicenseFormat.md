@@ -4,8 +4,6 @@ permalink: docs/LicenseFormat
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes
@@ -17,7 +15,8 @@ Name | Type | Description | Notes
 **size** | **String** | Keyword that details the size of the media, such as hd or sd for video, huge or vector for images | [optional] 
 
 
-## Enum: MediaTypeEnum {#MediaTypeEnum}
+<a name="MediaTypeEnum"></a>
+## Enum: MediaTypeEnum
 
 
 * `image` (value: `"image"`)

@@ -4,8 +4,6 @@ permalink: docs/TestEcho
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes

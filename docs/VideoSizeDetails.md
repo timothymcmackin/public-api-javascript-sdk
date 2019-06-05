@@ -4,8 +4,6 @@ permalink: docs/VideoSizeDetails
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes

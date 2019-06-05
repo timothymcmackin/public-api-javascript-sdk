@@ -4,8 +4,6 @@ permalink: docs/LicenseAudio
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes
@@ -15,7 +13,8 @@ Name | Type | Description | Notes
 **search_id** | **String** | ID of the search that led to this licensing event | [optional] 
 
 
-## Enum: LicenseEnum {#LicenseEnum}
+<a name="LicenseEnum"></a>
+## Enum: LicenseEnum
 
 
 * `standard` (value: `"audio_standard"`)

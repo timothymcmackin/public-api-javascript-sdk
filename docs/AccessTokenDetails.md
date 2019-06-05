@@ -4,8 +4,6 @@ permalink: docs/AccessTokenDetails
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes
@@ -21,7 +19,8 @@ Name | Type | Description | Notes
 **username** | **String** | User name that is associated with the user | [optional] 
 
 
-## Enum: RealmEnum {#RealmEnum}
+<a name="RealmEnum"></a>
+## Enum: RealmEnum
 
 
 * `customer` (value: `"customer"`)

@@ -4,8 +4,6 @@ permalink: docs/Album
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes

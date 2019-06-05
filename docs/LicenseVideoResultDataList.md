@@ -4,8 +4,6 @@ permalink: docs/LicenseVideoResultDataList
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes

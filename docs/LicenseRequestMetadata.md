@@ -4,8 +4,6 @@ permalink: docs/LicenseRequestMetadata
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes

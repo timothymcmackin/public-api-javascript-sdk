@@ -4,8 +4,6 @@ permalink: docs/Image
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes

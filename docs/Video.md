@@ -4,8 +4,6 @@ permalink: docs/Video
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes

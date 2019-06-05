@@ -4,8 +4,6 @@ permalink: docs/AudioAssetDetails
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes

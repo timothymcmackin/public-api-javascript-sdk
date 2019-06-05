@@ -38,7 +38,7 @@ Method | HTTP request | Description
 
 This endpoint adds one or more images to a collection by image IDs.
 
-### Example {#addLightboxItems-example}
+### Example
 
 ```javascript
 const sstk = require("shutterstock-api");
@@ -66,7 +66,7 @@ imagesApi.addLightboxItems(collectionId, body)
 ```
 
 
-### Parameters {#addLightboxItems-parameters}
+### Parameters
 
 
 Name | Type | Description
@@ -74,20 +74,20 @@ Name | Type | Description
  id (required) | String| Collection ID 
  body (required) | [CollectionItemRequest](CollectionItemRequest)| Array of image IDs to add to the collection 
 
-### Accepted authentication {#addLightboxItems-auth}
+### Accepted authentication
 
 
 - OAuth required scopes:
   - collections.edit
 
 
-### HTTP request headers {#addLightboxItems-headers}
+### HTTP request headers
 
 
 - Content-Type: application/json
 
 
-### Return type {#addLightboxItems-return}
+### Return type
 
 No response body.
 
@@ -100,7 +100,7 @@ No response body.
 
 This endpoint creates one or more image collections (lightboxes). To add images to the collections, use `POST /images/collections/{id}/items`.
 
-### Example {#createLightbox-example}
+### Example
 
 ```javascript
 const sstk = require("shutterstock-api");
@@ -121,27 +121,27 @@ imagesApi.createLightbox(body)
 ```
 
 
-### Parameters {#createLightbox-parameters}
+### Parameters
 
 
 Name | Type | Description
 ------------- | ------------- | -------------
  body (required) | [CollectionCreateRequest](CollectionCreateRequest)| The names of the new collections 
 
-### Accepted authentication {#createLightbox-auth}
+### Accepted authentication
 
 
 - OAuth required scopes:
   - collections.edit
 
 
-### HTTP request headers {#createLightbox-headers}
+### HTTP request headers
 
 
 - Content-Type: application/json
 - Accept: application/json
 
-### Return type {#createLightbox-return}
+### Return type
 
 No response body.
 
@@ -154,7 +154,7 @@ No response body.
 
 This endpoint deletes an image collection.
 
-### Example {#deleteLightbox-example}
+### Example
 
 ```javascript
 const sstk = require("shutterstock-api");
@@ -173,27 +173,27 @@ imagesApi.deleteLightbox(collectionId)
 ```
 
 
-### Parameters {#deleteLightbox-parameters}
+### Parameters
 
 
 Name | Type | Description
 ------------- | ------------- | -------------
  id (required) | String| Collection ID 
 
-### Accepted authentication {#deleteLightbox-auth}
+### Accepted authentication
 
 
 - OAuth required scopes:
   - collections.edit
 
 
-### HTTP request headers {#deleteLightbox-headers}
+### HTTP request headers
 
 No request headers required.
 
 
 
-### Return type {#deleteLightbox-return}
+### Return type
 
 No response body.
 
@@ -206,7 +206,7 @@ No response body.
 
 This endpoint removes one or more images from a collection.
 
-### Example {#deleteLightboxItems-example}
+### Example
 
 ```javascript
 const sstk = require("shutterstock-api");
@@ -232,7 +232,7 @@ imagesApi.deleteLightboxItems(collectionId, imagesToRemove)
 ```
 
 
-### Parameters {#deleteLightboxItems-parameters}
+### Parameters
 
 
 Name | Type | Description
@@ -240,20 +240,20 @@ Name | Type | Description
  id (required) | String| Collection ID 
  item_id | [[String]](String)| One or more image IDs to remove from the collection 
 
-### Accepted authentication {#deleteLightboxItems-auth}
+### Accepted authentication
 
 
 - OAuth required scopes:
   - collections.edit
 
 
-### HTTP request headers {#deleteLightboxItems-headers}
+### HTTP request headers
 
 No request headers required.
 
 
 
-### Return type {#deleteLightboxItems-return}
+### Return type
 
 No response body.
 
@@ -266,7 +266,7 @@ No response body.
 
 This endpoint redownloads images that you have already received a license for.
 
-### Example {#downloadImage-example}
+### Example
 
 ```javascript
 const sstk = require("shutterstock-api");
@@ -292,7 +292,7 @@ imagesApi.downloadImage(licenseId, body)
 ```
 
 
-### Parameters {#downloadImage-parameters}
+### Parameters
 
 
 Name | Type | Description
@@ -300,24 +300,24 @@ Name | Type | Description
  id (required) | String| License ID 
  body (required) | [RedownloadImage](RedownloadImage)| Information about the images to redownload 
 
-### Accepted authentication {#downloadImage-auth}
+### Accepted authentication
 
 
 - OAuth required scopes:
   - licenses.view
 
 
-### HTTP request headers {#downloadImage-headers}
+### HTTP request headers
 
 
 - Content-Type: application/json
 - Accept: application/json
 
-### Return type {#downloadImage-return}
+### Return type
 
 [Url](Url)
 
-### Example response {#downloadImage-response}
+### Example response
 
 ```
 {
@@ -333,7 +333,7 @@ Name | Type | Description
 
 This endpoint gets more detailed information about a featured collection, including its cover image and timestamps for its creation and most recent update. To get the images, use `GET /images/collections/featured/{id}/items`.
 
-### Example {#getFeaturedLightbox-example}
+### Example
 
 ```javascript
 const sstk = require('shutterstock-api');
@@ -360,7 +360,7 @@ api.getFeaturedLightbox(id, queryParams)
 
 ```
 
-### Parameters {#getFeaturedLightbox-parameters}
+### Parameters
 
 
 Name | Type | Description
@@ -369,22 +369,22 @@ Name | Type | Description
  embed | String| Which sharing information to include in the response, such as a URL to the collection <br/><br/>Valid values: "share_url"
  asset_hint | String| Cover image size, defaults to 1x, defaults to 1x <br/><br/>Valid values: "1x", "2x"
 
-### Accepted authentication {#getFeaturedLightbox-auth}
+### Accepted authentication
 
 
 - OAuth (No scope required.)
 
-### HTTP request headers {#getFeaturedLightbox-headers}
+### HTTP request headers
 
 
 
 - Accept: application/json
 
-### Return type {#getFeaturedLightbox-return}
+### Return type
 
 [FeaturedCollection](FeaturedCollection)
 
-### Example response {#getFeaturedLightbox-response}
+### Example response
 
 ```
 {
@@ -412,7 +412,7 @@ Name | Type | Description
 
 This endpoint lists the IDs of images in a featured collection and the date that each was added.
 
-### Example {#getFeaturedLightboxItems-example}
+### Example
 
 ```javascript
 const sstk = require('shutterstock-api');
@@ -439,7 +439,7 @@ api.getFeaturedLightboxItems(id, queryParams)
 
 ```
 
-### Parameters {#getFeaturedLightboxItems-parameters}
+### Parameters
 
 
 Name | Type | Description
@@ -448,22 +448,22 @@ Name | Type | Description
  page | Number| Page number, defaults to 1 
  per_page | Number| Number of results per page, defaults to 100, defaults to 100 
 
-### Accepted authentication {#getFeaturedLightboxItems-auth}
+### Accepted authentication
 
 
 - OAuth (No scope required.)
 
-### HTTP request headers {#getFeaturedLightboxItems-headers}
+### HTTP request headers
 
 
 
 - Accept: application/json
 
-### Return type {#getFeaturedLightboxItems-return}
+### Return type
 
 [CollectionItemDataList](CollectionItemDataList)
 
-### Example response {#getFeaturedLightboxItems-response}
+### Example response
 
 ```
 {
@@ -489,7 +489,7 @@ Name | Type | Description
 
 This endpoint lists featured collections of specific types and a name and cover image for each collection.
 
-### Example {#getFeaturedLightboxList-example}
+### Example
 
 ```javascript
 const sstk = require('shutterstock-api');
@@ -515,7 +515,7 @@ api.getFeaturedLightboxList(queryParams)
 
 ```
 
-### Parameters {#getFeaturedLightboxList-parameters}
+### Parameters
 
 
 Name | Type | Description
@@ -524,22 +524,22 @@ Name | Type | Description
  type | [[String]](String)| The types of collections to return <br/><br/>Valid values: "photo", "editorial", "vector"
  asset_hint | String| Cover image size, defaults to 1x, defaults to 1x <br/><br/>Valid values: "1x", "2x"
 
-### Accepted authentication {#getFeaturedLightboxList-auth}
+### Accepted authentication
 
 
 - OAuth (No scope required.)
 
-### HTTP request headers {#getFeaturedLightboxList-headers}
+### HTTP request headers
 
 
 
 - Accept: application/json
 
-### Return type {#getFeaturedLightboxList-return}
+### Return type
 
 [FeaturedCollectionDataList](FeaturedCollectionDataList)
 
-### Example response {#getFeaturedLightboxList-response}
+### Example response
 
 ```
 {
@@ -600,7 +600,7 @@ Name | Type | Description
 
 This endpoint shows information about an image, including a URL to a preview image and the sizes that it is available in.
 
-### Example {#getImage-example}
+### Example
 
 ```javascript
 const sstk = require('shutterstock-api');
@@ -629,7 +629,7 @@ api.getImage(id, queryParams)
 
 ```
 
-### Parameters {#getImage-parameters}
+### Parameters
 
 
 Name | Type | Description
@@ -637,22 +637,22 @@ Name | Type | Description
  id (required) | String| Image ID 
  view | String| Amount of detail to render in the response, defaults to full <br/><br/>Valid values: "minimal", "full"
 
-### Accepted authentication {#getImage-auth}
+### Accepted authentication
 
 - Basic
 - OAuth (No scope required.)
 
-### HTTP request headers {#getImage-headers}
+### HTTP request headers
 
 
 
 - Accept: application/json
 
-### Return type {#getImage-return}
+### Return type
 
 [Image](Image)
 
-### Example response {#getImage-response}
+### Example response
 
 ```
 {
@@ -792,7 +792,7 @@ Name | Type | Description
 
 This endpoint lists the categories (Shutterstock-assigned genres) that images can belong to.
 
-### Example {#getImageCategories-example}
+### Example
 
 ```javascript
 const sstk = require('shutterstock-api');
@@ -814,26 +814,26 @@ api.getImageCategories()
 
 ```
 
-### Parameters {#getImageCategories-parameters}
+### Parameters
 
 This endpoint does not accept any parameters.
 
-### Accepted authentication {#getImageCategories-auth}
+### Accepted authentication
 
 - Basic
 - OAuth (No scope required.)
 
-### HTTP request headers {#getImageCategories-headers}
+### HTTP request headers
 
 
 
 - Accept: application/json
 
-### Return type {#getImageCategories-return}
+### Return type
 
 [CategoryDataList](CategoryDataList)
 
-### Example response {#getImageCategories-response}
+### Example response
 
 ```
 {
@@ -872,7 +872,7 @@ This endpoint does not accept any parameters.
 
 This endpoint lists existing licenses. You can filter the results according to the type of license or the image ID.
 
-### Example {#getImageLicenseList-example}
+### Example
 
 ```javascript
 const sstk = require('shutterstock-api');
@@ -900,7 +900,7 @@ api.getImageLicenseList(queryParams)
 
 ```
 
-### Parameters {#getImageLicenseList-parameters}
+### Parameters
 
 
 Name | Type | Description
@@ -911,24 +911,24 @@ Name | Type | Description
  per_page | Number| Number of results per page, defaults to 20, defaults to 20 
  sort | String| Sort order, defaults to newest <br/><br/>Valid values: "newest", "oldest"
 
-### Accepted authentication {#getImageLicenseList-auth}
+### Accepted authentication
 
 
 - OAuth required scopes:
   - licenses.view
 
 
-### HTTP request headers {#getImageLicenseList-headers}
+### HTTP request headers
 
 
 
 - Accept: application/json
 
-### Return type {#getImageLicenseList-return}
+### Return type
 
 [DownloadHistoryDataList](DownloadHistoryDataList)
 
-### Example response {#getImageLicenseList-response}
+### Example response
 
 ```
 {
@@ -1023,7 +1023,7 @@ Name | Type | Description
 
 This endpoint lists information about one or more images, including the available sizes.
 
-### Example {#getImageList-example}
+### Example
 
 ```javascript
 const sstk = require('shutterstock-api');
@@ -1052,7 +1052,7 @@ api.getImageList(id, queryParams)
 
 ```
 
-### Parameters {#getImageList-parameters}
+### Parameters
 
 
 Name | Type | Description
@@ -1060,22 +1060,22 @@ Name | Type | Description
  id (required) | [[String]](String)| One or more image IDs 
  view | String| Amount of detail to render in the response, defaults to minimal <br/><br/>Valid values: "minimal", "full"
 
-### Accepted authentication {#getImageList-auth}
+### Accepted authentication
 
 - Basic
 - OAuth (No scope required.)
 
-### HTTP request headers {#getImageList-headers}
+### HTTP request headers
 
 
 
 - Accept: application/json
 
-### Return type {#getImageList-return}
+### Return type
 
 [ImageDataList](ImageDataList)
 
-### Example response {#getImageList-response}
+### Example response
 
 ```
 {
@@ -1360,7 +1360,7 @@ Name | Type | Description
 
 This endpoint returns images that customers put in the same collection as the specified image IDs.
 
-### Example {#getImageRecommendations-example}
+### Example
 
 ```javascript
 const sstk = require('shutterstock-api');
@@ -1390,7 +1390,7 @@ api.getImageRecommendations(id, queryParams)
 
 ```
 
-### Parameters {#getImageRecommendations-parameters}
+### Parameters
 
 
 Name | Type | Description
@@ -1399,22 +1399,22 @@ Name | Type | Description
  max_items | Number| Maximum number of results returned in the response, defaults to 20 
  safe | Boolean| Restrict results to safe images, defaults to true 
 
-### Accepted authentication {#getImageRecommendations-auth}
+### Accepted authentication
 
 - Basic
 - OAuth (No scope required.)
 
-### HTTP request headers {#getImageRecommendations-headers}
+### HTTP request headers
 
 
 
 - Accept: application/json
 
-### Return type {#getImageRecommendations-return}
+### Return type
 
 [RecommendationDataList](RecommendationDataList)
 
-### Example response {#getImageRecommendations-response}
+### Example response
 
 ```
 {
@@ -1451,7 +1451,7 @@ Name | Type | Description
 
 This endpoint gets more detailed information about a collection, including its cover image and timestamps for its creation and most recent update. To get the images in collections, use `GET /images/collections/{id}/items`.
 
-### Example {#getLightbox-example}
+### Example
 
 ```javascript
 const sstk = require('shutterstock-api');
@@ -1478,7 +1478,7 @@ api.getLightbox(id, queryParams)
 
 ```
 
-### Parameters {#getLightbox-parameters}
+### Parameters
 
 
 Name | Type | Description
@@ -1487,24 +1487,24 @@ Name | Type | Description
  embed | [[String]](String)| Which sharing information to include in the response, such as a URL to the collection <br/><br/>Valid values: "share_code", "share_url"
  share_code | String| Code to retrieve a shared collection 
 
-### Accepted authentication {#getLightbox-auth}
+### Accepted authentication
 
 
 - OAuth required scopes:
   - collections.view
 
 
-### HTTP request headers {#getLightbox-headers}
+### HTTP request headers
 
 
 
 - Accept: application/json
 
-### Return type {#getLightbox-return}
+### Return type
 
 [Collection](Collection)
 
-### Example response {#getLightbox-response}
+### Example response
 
 ```
 {
@@ -1532,7 +1532,7 @@ Name | Type | Description
 
 This endpoint lists the IDs of images in a collection and the date that each was added.
 
-### Example {#getLightboxItems-example}
+### Example
 
 ```javascript
 const sstk = require('shutterstock-api');
@@ -1560,7 +1560,7 @@ api.getLightboxItems(id, queryParams)
 
 ```
 
-### Parameters {#getLightboxItems-parameters}
+### Parameters
 
 
 Name | Type | Description
@@ -1570,24 +1570,24 @@ Name | Type | Description
  page | Number| Page number, defaults to 1 
  per_page | Number| Number of results per page, defaults to 100, defaults to 100 
 
-### Accepted authentication {#getLightboxItems-auth}
+### Accepted authentication
 
 
 - OAuth required scopes:
   - collections.view
 
 
-### HTTP request headers {#getLightboxItems-headers}
+### HTTP request headers
 
 
 
 - Accept: application/json
 
-### Return type {#getLightboxItems-return}
+### Return type
 
 [CollectionItemDataList](CollectionItemDataList)
 
-### Example response {#getLightboxItems-response}
+### Example response
 
 ```
 {
@@ -1613,7 +1613,7 @@ Name | Type | Description
 
 This endpoint lists your collections of images and their basic attributes.
 
-### Example {#getLightboxList-example}
+### Example
 
 ```javascript
 const sstk = require('shutterstock-api');
@@ -1639,7 +1639,7 @@ api.getLightboxList(queryParams)
 
 ```
 
-### Parameters {#getLightboxList-parameters}
+### Parameters
 
 
 Name | Type | Description
@@ -1648,24 +1648,24 @@ Name | Type | Description
  page | Number| Page number, defaults to 1 
  per_page | Number| Number of results per page, defaults to 100, defaults to 100 
 
-### Accepted authentication {#getLightboxList-auth}
+### Accepted authentication
 
 
 - OAuth required scopes:
   - collections.view
 
 
-### HTTP request headers {#getLightboxList-headers}
+### HTTP request headers
 
 
 
 - Accept: application/json
 
-### Return type {#getLightboxList-return}
+### Return type
 
 [CollectionDataList](CollectionDataList)
 
-### Example response {#getLightboxList-response}
+### Example response
 
 ```
 {
@@ -1711,7 +1711,7 @@ Name | Type | Description
 
 This endpoint returns images that are visually similar to an image that you specify.
 
-### Example {#getSimilarImages-example}
+### Example
 
 ```javascript
 const sstk = require('shutterstock-api');
@@ -1742,7 +1742,7 @@ api.getSimilarImages(id, queryParams)
 
 ```
 
-### Parameters {#getSimilarImages-parameters}
+### Parameters
 
 
 Name | Type | Description
@@ -1752,22 +1752,22 @@ Name | Type | Description
  per_page | Number| Number of results per page, defaults to 20, defaults to 20 
  view | String| Amount of detail to render in the response, defaults to minimal <br/><br/>Valid values: "minimal", "full"
 
-### Accepted authentication {#getSimilarImages-auth}
+### Accepted authentication
 
 - Basic
 - OAuth (No scope required.)
 
-### HTTP request headers {#getSimilarImages-headers}
+### HTTP request headers
 
 
 
 - Accept: application/json
 
-### Return type {#getSimilarImages-return}
+### Return type
 
 [ImageSearchResults](ImageSearchResults)
 
-### Example response {#getSimilarImages-response}
+### Example response
 
 ```
 {
@@ -2041,7 +2041,7 @@ Name | Type | Description
 
 This endpoint gets licenses for one or more images. You must specify the image IDs in the body parameter and other details like the format, size, and subscription ID either in the query parameter or with each image ID in the body parameter. Values in the body parameter override values in the query parameters.
 
-### Example {#licenseImages-example}
+### Example
 
 ```javascript
 const sstk = require("shutterstock-api");
@@ -2078,7 +2078,7 @@ imagesApi.licenseImages(body, queryParams)
 ```
 
 
-### Parameters {#licenseImages-parameters}
+### Parameters
 
 
 Name | Type | Description
@@ -2089,7 +2089,7 @@ Name | Type | Description
  size | String| Image size, defaults to huge <br/><br/>Valid values: "small", "medium", "huge", "vector"
  search_id | String| Search ID that was provided in the results of an image search 
 
-### Accepted authentication {#licenseImages-auth}
+### Accepted authentication
 
 
 - OAuth required scopes:
@@ -2098,17 +2098,17 @@ required scopes:
   - purchases.view
 
 
-### HTTP request headers {#licenseImages-headers}
+### HTTP request headers
 
 
 - Content-Type: application/json
 - Accept: application/json
 
-### Return type {#licenseImages-return}
+### Return type
 
 [LicenseImageResultDataList](LicenseImageResultDataList)
 
-### Example response {#licenseImages-response}
+### Example response
 
 ```
 {
@@ -2163,7 +2163,7 @@ required scopes:
 
 This endpoint sets a new name for an image collection.
 
-### Example {#renameLightbox-example}
+### Example
 
 ```javascript
 const sstk = require("shutterstock-api");
@@ -2186,7 +2186,7 @@ imagesApi.renameLightbox(collectionId, body)
 ```
 
 
-### Parameters {#renameLightbox-parameters}
+### Parameters
 
 
 Name | Type | Description
@@ -2194,20 +2194,20 @@ Name | Type | Description
  id (required) | String| Collection ID 
  body (required) | [CollectionUpdateRequest](CollectionUpdateRequest)| The new name for the collection 
 
-### Accepted authentication {#renameLightbox-auth}
+### Accepted authentication
 
 
 - OAuth required scopes:
   - collections.edit
 
 
-### HTTP request headers {#renameLightbox-headers}
+### HTTP request headers
 
 
 - Content-Type: application/json
 
 
-### Return type {#renameLightbox-return}
+### Return type
 
 No response body.
 
@@ -2220,7 +2220,7 @@ No response body.
 
 This endpoint searches for images. If you specify more than one search parameter, the API uses an AND condition. Array parameters can be specified multiple times; in this case, the API uses an AND or an OR condition with those values, depending on the parameter. You can also filter search terms out in the `query` parameter by prefixing the term with NOT. Free API accounts show results only from a limited library of media, not the full Shutterstock media library. Also, the number of search fields they can use in a request is limited.
 
-### Example {#searchImages-example}
+### Example
 
 ```javascript
 const sstk = require("shutterstock-api");
@@ -2246,7 +2246,7 @@ imagesApi.searchImages(queryParams)
 ```
 
 
-### Parameters {#searchImages-parameters}
+### Parameters
 
 
 Name | Type | Description
@@ -2281,22 +2281,22 @@ Name | Type | Description
  width_from | Number| Show images with the specified width or larger, in pixels 
  width_to | Number| Show images with the specified width or smaller, in pixels 
 
-### Accepted authentication {#searchImages-auth}
+### Accepted authentication
 
 - Basic
 - OAuth (No scope required.)
 
-### HTTP request headers {#searchImages-headers}
+### HTTP request headers
 
 
 
 - Accept: application/json
 
-### Return type {#searchImages-return}
+### Return type
 
 [ImageSearchResults](ImageSearchResults)
 
-### Example response {#searchImages-response}
+### Example response
 
 ```
 {
@@ -2570,7 +2570,7 @@ Name | Type | Description
 
 This endpoint uploads an image for reverse image search. The image must be in JPEG or PNG format.
 
-### Example {#uploadEphemeralImage-example}
+### Example
 
 ```javascript
 const sstk = require("shutterstock-api");
@@ -2605,29 +2605,29 @@ imagesApi.uploadEphemeralImage(body)
 ```
 
 
-### Parameters {#uploadEphemeralImage-parameters}
+### Parameters
 
 
 Name | Type | Description
 ------------- | ------------- | -------------
  body (required) | [ImageCreateRequest](ImageCreateRequest)| The image data in JPEG or PNG format 
 
-### Accepted authentication {#uploadEphemeralImage-auth}
+### Accepted authentication
 
 - Basic
 - OAuth (No scope required.)
 
-### HTTP request headers {#uploadEphemeralImage-headers}
+### HTTP request headers
 
 
 - Content-Type: application/json
 - Accept: application/json
 
-### Return type {#uploadEphemeralImage-return}
+### Return type
 
 [ImageCreateResponse](ImageCreateResponse)
 
-### Example response {#uploadEphemeralImage-response}
+### Example response
 
 ```
 {

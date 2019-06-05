@@ -4,8 +4,6 @@ permalink: docs/FeaturedCollectionDataList
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes

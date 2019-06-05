@@ -4,8 +4,6 @@ permalink: docs/EditorialCategory
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes

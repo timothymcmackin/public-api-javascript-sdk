@@ -4,8 +4,6 @@ permalink: docs/Price
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes

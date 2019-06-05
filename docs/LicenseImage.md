@@ -4,8 +4,6 @@ permalink: docs/LicenseImage
 toc: false
 ---
 
-
-
 ## Properties
 
 Name | Type | Description | Notes
@@ -23,7 +21,8 @@ Name | Type | Description | Notes
 **verification_code** | **String** | (Deprecated) | [optional] 
 
 
-## Enum: FormatEnum {#FormatEnum}
+<a name="FormatEnum"></a>
+## Enum: FormatEnum
 
 
 * `jpg` (value: `"jpg"`)
@@ -33,7 +32,8 @@ Name | Type | Description | Notes
 
 
 
-## Enum: SizeEnum {#SizeEnum}
+<a name="SizeEnum"></a>
+## Enum: SizeEnum
 
 
 * `small` (value: `"small"`)
