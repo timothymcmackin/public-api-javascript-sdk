@@ -1,23 +1,26 @@
-# shutterstock-api.AudioApi
+---
+title: shutterstock-api.AudioApi
+permalink: docs/AudioApi
+---
 
 All URIs are relative to `https://api.shutterstock.com`.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[`addSoundboxItems`](AudioApi.md#addSoundboxItems) | `POST /v2/audio/collections/{id}/items` | Add audio tracks to collections
-[`createSoundbox`](AudioApi.md#createSoundbox) | `POST /v2/audio/collections` | Create audio collections
-[`deleteSoundbox`](AudioApi.md#deleteSoundbox) | `DELETE /v2/audio/collections/{id}` | Delete audio collections
-[`deleteSoundboxItems`](AudioApi.md#deleteSoundboxItems) | `DELETE /v2/audio/collections/{id}/items` | Remove audio tracks from collections
-[`downloadTracks`](AudioApi.md#downloadTracks) | `POST /v2/audio/licenses/{id}/downloads` | Download audio tracks
-[`getAudioLicenseList`](AudioApi.md#getAudioLicenseList) | `GET /v2/audio/licenses` | List audio licenses
-[`getSoundbox`](AudioApi.md#getSoundbox) | `GET /v2/audio/collections/{id}` | Get the details of audio collections
-[`getSoundboxItems`](AudioApi.md#getSoundboxItems) | `GET /v2/audio/collections/{id}/items` | Get the contents of audio collections
-[`getSoundboxList`](AudioApi.md#getSoundboxList) | `GET /v2/audio/collections` | List audio collections
-[`getTrack`](AudioApi.md#getTrack) | `GET /v2/audio/{id}` | Get details about audio tracks
-[`getTrackList`](AudioApi.md#getTrackList) | `GET /v2/audio` | List audio tracks
-[`licenseTrack`](AudioApi.md#licenseTrack) | `POST /v2/audio/licenses` | License audio tracks
-[`renameSoundbox`](AudioApi.md#renameSoundbox) | `POST /v2/audio/collections/{id}` | Rename audio collections
-[`searchAudio`](AudioApi.md#searchAudio) | `GET /v2/audio/search` | Search for tracks
+[`addSoundboxItems`](#addSoundboxItems) | `POST /v2/audio/collections/{id}/items` | Add audio tracks to collections
+[`createSoundbox`](#createSoundbox) | `POST /v2/audio/collections` | Create audio collections
+[`deleteSoundbox`](#deleteSoundbox) | `DELETE /v2/audio/collections/{id}` | Delete audio collections
+[`deleteSoundboxItems`](#deleteSoundboxItems) | `DELETE /v2/audio/collections/{id}/items` | Remove audio tracks from collections
+[`downloadTracks`](#downloadTracks) | `POST /v2/audio/licenses/{id}/downloads` | Download audio tracks
+[`getAudioLicenseList`](#getAudioLicenseList) | `GET /v2/audio/licenses` | List audio licenses
+[`getSoundbox`](#getSoundbox) | `GET /v2/audio/collections/{id}` | Get the details of audio collections
+[`getSoundboxItems`](#getSoundboxItems) | `GET /v2/audio/collections/{id}/items` | Get the contents of audio collections
+[`getSoundboxList`](#getSoundboxList) | `GET /v2/audio/collections` | List audio collections
+[`getTrack`](#getTrack) | `GET /v2/audio/{id}` | Get details about audio tracks
+[`getTrackList`](#getTrackList) | `GET /v2/audio` | List audio tracks
+[`licenseTrack`](#licenseTrack) | `POST /v2/audio/licenses` | License audio tracks
+[`renameSoundbox`](#renameSoundbox) | `POST /v2/audio/collections/{id}` | Rename audio collections
+[`searchAudio`](#searchAudio) | `GET /v2/audio/search` | Search for tracks
 
 
 <a name="addSoundboxItems"></a>
@@ -28,7 +31,7 @@ Method | HTTP request | Description
 
 This endpoint adds one or more tracks to a collection by track IDs.
 
-### Example
+### Example {#addSoundboxItems-example}
 
 ```javascript
 const sstk = require("shutterstock-api");
@@ -58,28 +61,28 @@ audioApi.addSoundboxItems(collectionId, body)
 ```
 
 
-### Parameters
+### Parameters {#addSoundboxItems-parameters}
 
 
 Name | Type | Description
 ------------- | ------------- | -------------
  id (required) | String| Collection ID 
- body (required) | [CollectionItemRequest](CollectionItemRequest.md)| List of items to add to collection 
+ body (required) | [CollectionItemRequest](CollectionItemRequest)| List of items to add to collection 
 
-### Accepted authentication
+### Accepted authentication {#addSoundboxItems-auth}
 
 
-- [OAuth](../README.md#OAuth_authentication) Required scopes:
+- OAuth required scopes:
   - collections.edit
 
 
-### HTTP request headers
+### HTTP request headers {#addSoundboxItems-headers}
 
 
 - Content-Type: application/json
 
 
-### Return type
+### Return type {#addSoundboxItems-return}
 
 No response body.
 
@@ -90,9 +93,9 @@ No response body.
 
 **Create audio collections**
 
-This endpoint creates one or more collections (soundboxes). To add tracks, use &#x60;POST /audio/collections/{id}/items&#x60;.
+This endpoint creates one or more collections (soundboxes). To add tracks, use `POST /audio/collections/{id}/items`.
 
-### Example
+### Example {#createSoundbox-example}
 
 ```javascript
 const sstk = require("shutterstock-api");
@@ -113,35 +116,37 @@ audioApi.createSoundbox(body)
 ```
 
 
-### Parameters
+### Parameters {#createSoundbox-parameters}
 
 
 Name | Type | Description
 ------------- | ------------- | -------------
- body (required) | [CollectionCreateRequest](CollectionCreateRequest.md)| Collection metadata 
+ body (required) | [CollectionCreateRequest](CollectionCreateRequest)| Collection metadata 
 
-### Accepted authentication
+### Accepted authentication {#createSoundbox-auth}
 
 
-- [OAuth](../README.md#OAuth_authentication) Required scopes:
+- OAuth required scopes:
   - collections.edit
 
 
-### HTTP request headers
+### HTTP request headers {#createSoundbox-headers}
 
 
 - Content-Type: application/json
 - Accept: application/json
 
-### Return type
+### Return type {#createSoundbox-return}
 
-[CollectionCreateResponse](CollectionCreateResponse.md)
+[CollectionCreateResponse](CollectionCreateResponse)
 
-### Example response
+### Example response {#createSoundbox-response}
 
+```
 {
   "id" : "48433105"
 }
+```
 
 <a name="deleteSoundbox"></a>
 # AudioApi.deleteSoundbox
@@ -151,7 +156,7 @@ Name | Type | Description
 
 This endpoint deletes a collection.
 
-### Example
+### Example {#deleteSoundbox-example}
 
 ```javascript
 const sstk = require("shutterstock-api");
@@ -170,27 +175,27 @@ audioApi.deleteSoundbox(collectionId)
 ```
 
 
-### Parameters
+### Parameters {#deleteSoundbox-parameters}
 
 
 Name | Type | Description
 ------------- | ------------- | -------------
  id (required) | String| Collection ID 
 
-### Accepted authentication
+### Accepted authentication {#deleteSoundbox-auth}
 
 
-- [OAuth](../README.md#OAuth_authentication) Required scopes:
+- OAuth required scopes:
   - collections.edit
 
 
-### HTTP request headers
+### HTTP request headers {#deleteSoundbox-headers}
 
 No request headers required.
 
 
 
-### Return type
+### Return type {#deleteSoundbox-return}
 
 No response body.
 
@@ -203,7 +208,7 @@ No response body.
 
 This endpoint removes one or more tracks from a collection.
 
-### Example
+### Example {#deleteSoundboxItems-example}
 
 ```javascript
 const sstk = require("shutterstock-api");
@@ -230,28 +235,28 @@ audioApi.deleteSoundboxItems(collectionId, tracksToRemove)
 ```
 
 
-### Parameters
+### Parameters {#deleteSoundboxItems-parameters}
 
 
 Name | Type | Description
 ------------- | ------------- | -------------
  id (required) | String| Collection ID 
- item_id | [String]| One or more item IDs to remove from the collection 
+ item_id | [[String]](String)| One or more item IDs to remove from the collection 
 
-### Accepted authentication
+### Accepted authentication {#deleteSoundboxItems-auth}
 
 
-- [OAuth](../README.md#OAuth_authentication) Required scopes:
+- OAuth required scopes:
   - collections.edit
 
 
-### HTTP request headers
+### HTTP request headers {#deleteSoundboxItems-headers}
 
 No request headers required.
 
 
 
-### Return type
+### Return type {#deleteSoundboxItems-return}
 
 No response body.
 
@@ -264,7 +269,7 @@ No response body.
 
 This endpoint redownloads tracks that you have already received a license for.
 
-### Example
+### Example {#downloadTracks-example}
 
 ```javascript
 const sstk = require("shutterstock-api");
@@ -286,35 +291,37 @@ audioApi.downloadTracks(licenseId)
 ```
 
 
-### Parameters
+### Parameters {#downloadTracks-parameters}
 
 
 Name | Type | Description
 ------------- | ------------- | -------------
  id (required) | String| License ID 
 
-### Accepted authentication
+### Accepted authentication {#downloadTracks-auth}
 
 
-- [OAuth](../README.md#OAuth_authentication) Required scopes:
+- OAuth required scopes:
   - licenses.view
 
 
-### HTTP request headers
+### HTTP request headers {#downloadTracks-headers}
 
 
 
 - Accept: application/json
 
-### Return type
+### Return type {#downloadTracks-return}
 
-[Url](Url.md)
+[Url](Url)
 
-### Example response
+### Example response {#downloadTracks-response}
 
+```
 {
   "url" : "url"
 }
+```
 
 <a name="getAudioLicenseList"></a>
 # AudioApi.getAudioLicenseList
@@ -324,7 +331,7 @@ Name | Type | Description
 
 This endpoint lists existing licenses. You can filter the results according to the track ID to see if you have an existing license for a specific track.
 
-### Example
+### Example {#getAudioLicenseList-example}
 
 ```javascript
 const sstk = require('shutterstock-api');
@@ -348,32 +355,33 @@ api.getAudioLicenseList(queryParams)
 
 ```
 
-### Parameters
+### Parameters {#getAudioLicenseList-parameters}
 
 
 Name | Type | Description
 ------------- | ------------- | -------------
  audio_id | String| Show licenses for the specified track ID 
 
-### Accepted authentication
+### Accepted authentication {#getAudioLicenseList-auth}
 
 
-- [OAuth](../README.md#OAuth_authentication) Required scopes:
+- OAuth required scopes:
   - licenses.view
 
 
-### HTTP request headers
+### HTTP request headers {#getAudioLicenseList-headers}
 
 
 
 - Accept: application/json
 
-### Return type
+### Return type {#getAudioLicenseList-return}
 
-[DownloadHistoryDataList](DownloadHistoryDataList.md)
+[DownloadHistoryDataList](DownloadHistoryDataList)
 
-### Example response
+### Example response {#getAudioLicenseList-response}
 
+```
 {
   "per_page" : 6,
   "data" : [ {
@@ -456,6 +464,7 @@ Name | Type | Description
     "items" : [ "{}", "{}" ]
   } ]
 }
+```
 
 <a name="getSoundbox"></a>
 # AudioApi.getSoundbox
@@ -463,9 +472,9 @@ Name | Type | Description
 
 **Get the details of audio collections**
 
-This endpoint gets more detailed information about a collection, including the number of items in it and when it was last updated. To get the tracks in collections, use &#x60;GET /audio/collections/{id}/items&#x60;.
+This endpoint gets more detailed information about a collection, including the number of items in it and when it was last updated. To get the tracks in collections, use `GET /audio/collections/{id}/items`.
 
-### Example
+### Example {#getSoundbox-example}
 
 ```javascript
 const sstk = require('shutterstock-api');
@@ -488,32 +497,33 @@ api.getSoundbox(id)
 
 ```
 
-### Parameters
+### Parameters {#getSoundbox-parameters}
 
 
 Name | Type | Description
 ------------- | ------------- | -------------
  id (required) | String| Collection ID 
 
-### Accepted authentication
+### Accepted authentication {#getSoundbox-auth}
 
 
-- [OAuth](../README.md#OAuth_authentication) Required scopes:
+- OAuth required scopes:
   - collections.view
 
 
-### HTTP request headers
+### HTTP request headers {#getSoundbox-headers}
 
 
 
 - Accept: application/json
 
-### Return type
+### Return type {#getSoundbox-return}
 
-[Collection](Collection.md)
+[Collection](Collection)
 
-### Example response
+### Example response {#getSoundbox-response}
 
+```
 {
   "created_time" : "2000-01-23T04:56:07.000+00:00",
   "updated_time" : "2000-01-23T04:56:07.000+00:00",
@@ -529,6 +539,7 @@ Name | Type | Description
   },
   "total_item_count" : 0
 }
+```
 
 <a name="getSoundboxItems"></a>
 # AudioApi.getSoundboxItems
@@ -538,7 +549,7 @@ Name | Type | Description
 
 This endpoint lists the IDs of tracks in a collection and the date that each was added.
 
-### Example
+### Example {#getSoundboxItems-example}
 
 ```javascript
 const sstk = require('shutterstock-api');
@@ -566,7 +577,7 @@ api.getSoundboxItems(id, queryParams)
 
 ```
 
-### Parameters
+### Parameters {#getSoundboxItems-parameters}
 
 
 Name | Type | Description
@@ -576,25 +587,26 @@ Name | Type | Description
  per_page | Number| Number of results per page, defaults to 100 
  sort | String| Sort order, defaults to oldest <br/><br/>Valid values: "newest", "oldest"
 
-### Accepted authentication
+### Accepted authentication {#getSoundboxItems-auth}
 
 
-- [OAuth](../README.md#OAuth_authentication) Required scopes:
+- OAuth required scopes:
   - collections.view
 
 
-### HTTP request headers
+### HTTP request headers {#getSoundboxItems-headers}
 
 
 
 - Accept: application/json
 
-### Return type
+### Return type {#getSoundboxItems-return}
 
-[CollectionItemDataList](CollectionItemDataList.md)
+[CollectionItemDataList](CollectionItemDataList)
 
-### Example response
+### Example response {#getSoundboxItems-response}
 
+```
 {
   "data" : [ {
     "added_time" : "2016-08-18T18:52:59-04:00",
@@ -608,6 +620,7 @@ Name | Type | Description
   "page" : 1,
   "per_page" : 100
 }
+```
 
 <a name="getSoundboxList"></a>
 # AudioApi.getSoundboxList
@@ -617,7 +630,7 @@ Name | Type | Description
 
 This endpoint lists your collections of audio tracks and their basic attributes.
 
-### Example
+### Example {#getSoundboxList-example}
 
 ```javascript
 const sstk = require('shutterstock-api');
@@ -642,7 +655,7 @@ api.getSoundboxList(queryParams)
 
 ```
 
-### Parameters
+### Parameters {#getSoundboxList-parameters}
 
 
 Name | Type | Description
@@ -650,25 +663,26 @@ Name | Type | Description
  page | Number| Page number, defaults to 1 
  per_page | Number| Number of results per page, defaults to 100 
 
-### Accepted authentication
+### Accepted authentication {#getSoundboxList-auth}
 
 
-- [OAuth](../README.md#OAuth_authentication) Required scopes:
+- OAuth required scopes:
   - collections.view
 
 
-### HTTP request headers
+### HTTP request headers {#getSoundboxList-headers}
 
 
 
 - Accept: application/json
 
-### Return type
+### Return type {#getSoundboxList-return}
 
-[CollectionDataList](CollectionDataList.md)
+[CollectionDataList](CollectionDataList)
 
-### Example response
+### Example response {#getSoundboxList-response}
 
+```
 {
   "data" : [ {
     "created_time" : "2014-11-05T19:29:56-05:00",
@@ -702,6 +716,7 @@ Name | Type | Description
     "updated_time" : "2014-11-05T19:32:13-05:00"
   } ]
 }
+```
 
 <a name="getTrack"></a>
 # AudioApi.getTrack
@@ -711,7 +726,7 @@ Name | Type | Description
 
 This endpoint shows information about a track, including its genres, instruments, and other attributes.
 
-### Example
+### Example {#getTrack-example}
 
 ```javascript
 const sstk = require('shutterstock-api');
@@ -740,7 +755,7 @@ api.getTrack(id, queryParams)
 
 ```
 
-### Parameters
+### Parameters {#getTrack-parameters}
 
 
 Name | Type | Description
@@ -748,23 +763,24 @@ Name | Type | Description
  id (required) | String| Audio track ID 
  view | String| Amount of detail to render in the response, defaults to full <br/><br/>Valid values: "minimal", "full"
 
-### Accepted authentication
+### Accepted authentication {#getTrack-auth}
 
-- [Basic](../README.md#Basic_authentication)
-- [OAuth](../README.md#OAuth_authentication) (No scope required.)
+- Basic
+- OAuth (No scope required.)
 
-### HTTP request headers
+### HTTP request headers {#getTrack-headers}
 
 
 
 - Accept: application/json
 
-### Return type
+### Return type {#getTrack-return}
 
-[Audio](Audio.md)
+[Audio](Audio)
 
-### Example response
+### Example response {#getTrack-response}
 
+```
 {
   "added_date" : "2016-08-16",
   "album" : {
@@ -817,6 +833,7 @@ Name | Type | Description
   "vocal_description" : "",
   "url" : "https://www.shutterstock.com/music/track/another-tomorrow/442583"
 }
+```
 
 <a name="getTrackList"></a>
 # AudioApi.getTrackList
@@ -826,7 +843,7 @@ Name | Type | Description
 
 This endpoint lists information about one or more audio tracks, including the description and publication date.
 
-### Example
+### Example {#getTrackList-example}
 
 ```javascript
 const sstk = require('shutterstock-api');
@@ -855,31 +872,32 @@ api.getTrackList(id, queryParams)
 
 ```
 
-### Parameters
+### Parameters {#getTrackList-parameters}
 
 
 Name | Type | Description
 ------------- | ------------- | -------------
- id (required) | [String]| One or more audio IDs 
+ id (required) | [[String]](String)| One or more audio IDs 
  view | String| Amount of detail to render in the response, defaults to minimal <br/><br/>Valid values: "minimal", "full"
 
-### Accepted authentication
+### Accepted authentication {#getTrackList-auth}
 
-- [Basic](../README.md#Basic_authentication)
-- [OAuth](../README.md#OAuth_authentication) (No scope required.)
+- Basic
+- OAuth (No scope required.)
 
-### HTTP request headers
+### HTTP request headers {#getTrackList-headers}
 
 
 
 - Accept: application/json
 
-### Return type
+### Return type {#getTrackList-return}
 
-[AudioDataList](AudioDataList.md)
+[AudioDataList](AudioDataList)
 
-### Example response
+### Example response {#getTrackList-response}
 
+```
 {
   "data" : [ {
     "added_date" : "2016-04-12",
@@ -933,6 +951,7 @@ Name | Type | Description
     "vocal_description" : ""
   } ]
 }
+```
 
 <a name="licenseTrack"></a>
 # AudioApi.licenseTrack
@@ -942,7 +961,7 @@ Name | Type | Description
 
 This endpoint gets licenses for one or more tracks.
 
-### Example
+### Example {#licenseTrack-example}
 
 ```javascript
 const sstk = require("shutterstock-api");
@@ -974,34 +993,35 @@ audioApi.licenseTrack(body)
 ```
 
 
-### Parameters
+### Parameters {#licenseTrack-parameters}
 
 
 Name | Type | Description
 ------------- | ------------- | -------------
- body (required) | [LicenseAudioRequest](LicenseAudioRequest.md)| Tracks to license 
+ body (required) | [LicenseAudioRequest](LicenseAudioRequest)| Tracks to license 
  license | String| License type, defaults to audio_standard <br/><br/>Valid values: "audio_standard", "audio_enhanced", "audio_platform"
  search_id | String| The ID of the search that led to licensing this track 
 
-### Accepted authentication
+### Accepted authentication {#licenseTrack-auth}
 
 
-- [OAuth](../README.md#OAuth_authentication) Required scopes:
+- OAuth required scopes:
   - licenses.create
 
 
-### HTTP request headers
+### HTTP request headers {#licenseTrack-headers}
 
 
 - Content-Type: application/json
 - Accept: application/json
 
-### Return type
+### Return type {#licenseTrack-return}
 
-[LicenseAudioResultDataList](LicenseAudioResultDataList.md)
+[LicenseAudioResultDataList](LicenseAudioResultDataList)
 
-### Example response
+### Example response {#licenseTrack-response}
 
+```
 {
   "data" : [ {
     "audio_id" : "1",
@@ -1010,6 +1030,7 @@ Name | Type | Description
     }
   } ]
 }
+```
 
 <a name="renameSoundbox"></a>
 # AudioApi.renameSoundbox
@@ -1019,7 +1040,7 @@ Name | Type | Description
 
 This endpoint sets a new name for a collection.
 
-### Example
+### Example {#renameSoundbox-example}
 
 ```javascript
 const sstk = require("shutterstock-api");
@@ -1042,28 +1063,28 @@ audioApi.renameSoundbox(collectionId, body)
 ```
 
 
-### Parameters
+### Parameters {#renameSoundbox-parameters}
 
 
 Name | Type | Description
 ------------- | ------------- | -------------
  id (required) | String| Collection ID 
- body (required) | [CollectionUpdateRequest](CollectionUpdateRequest.md)| Collection changes 
+ body (required) | [CollectionUpdateRequest](CollectionUpdateRequest)| Collection changes 
 
-### Accepted authentication
+### Accepted authentication {#renameSoundbox-auth}
 
 
-- [OAuth](../README.md#OAuth_authentication) Required scopes:
+- OAuth required scopes:
   - collections.edit
 
 
-### HTTP request headers
+### HTTP request headers {#renameSoundbox-headers}
 
 
 - Content-Type: application/json
 
 
-### Return type
+### Return type {#renameSoundbox-return}
 
 No response body.
 
@@ -1076,7 +1097,7 @@ No response body.
 
 This endpoint searches for tracks. If you specify more than one search parameter, the API uses an AND condition. Array parameters can be specified multiple times; in this case, the API uses an AND or an OR condition with those values, depending on the parameter.
 
-### Example
+### Example {#searchAudio-example}
 
 ```javascript
 const sstk = require("shutterstock-api");
@@ -1102,22 +1123,22 @@ audioApi.searchAudio(queryParams)
 ```
 
 
-### Parameters
+### Parameters {#searchAudio-parameters}
 
 
 Name | Type | Description
 ------------- | ------------- | -------------
- artists | [String]| Show tracks with one of the specified artist names or IDs 
+ artists | [[String]](String)| Show tracks with one of the specified artist names or IDs 
  bpm | Number| (Deprecated; use bpm_from and bpm_to instead) Show tracks with the specified beats per minute 
  bpm_from | Number| Show tracks with the specified beats per minute or faster 
  bpm_to | Number| Show tracks with the specified beats per minute or slower 
  duration | Number| Show tracks with the specified duration (seconds) 
  duration_from | Number| Show tracks with the specified duration or longer (seconds) 
  duration_to | Number| Show tracks with the specified duration or shorter (seconds) 
- genre | [String]| Show tracks with each of the specified genres <br/><br/>Valid values: "Acoustic", "Ambient", "Audio Logo", "Blues", "Chill Out", "Classical", "Corporate", "Country", "Dance/Techno", "Dubstep", "Easy Listening", "Electro Pop", "Electronic", "Folk", "Games", "Hip Hop", "Holiday", "Independent", "Indie Pop", "Jazz", "Kids/Children", "Latin", "Masterworks", "Motown", "New Age", "News", "Piano / Solo Instrumental", "Pop", "Production / Film Scores", "R&B", "Reggae", "Rock", "Trailer", "Vocals", "World"
+ genre | [[String]](String)| Show tracks with each of the specified genres <br/><br/>Valid values: "Acoustic", "Ambient", "Audio Logo", "Blues", "Chill Out", "Classical", "Corporate", "Country", "Dance/Techno", "Dubstep", "Easy Listening", "Electro Pop", "Electronic", "Folk", "Games", "Hip Hop", "Holiday", "Independent", "Indie Pop", "Jazz", "Kids/Children", "Latin", "Masterworks", "Motown", "New Age", "News", "Piano / Solo Instrumental", "Pop", "Production / Film Scores", "R&B", "Reggae", "Rock", "Trailer", "Vocals", "World"
  is_instrumental | Boolean| Show instrumental music only 
- instruments | [String]| Show tracks with each of the specified instruments 
- moods | [String]| Show tracks with each of the specified moods <br/><br/>Valid values: "Action/Sports", "Adventure/Discovery", "Aerobics/Workout", "Aggressive", "Comedy/Funny", "Crime/Thriller/Spy", "Dark/Somber", "Epic/Orchestral", "Fashion/Lifestyle", "Feel Good", "Gentle/Light", "Happy/Cheerful", "Horror/Scary", "Magical/Mystical", "Military/Patriotic", "Relaxation/Meditation", "Religious/Christian", "Romantic/Sentimental", "Sad/Nostalgic", "Sci-Fi/Future", "Sexy/Sensual", "Strange/Bizarre", "Suspense/Drama", "Underscores", "Uplifting", "Wedding"
+ instruments | [[String]](String)| Show tracks with each of the specified instruments 
+ moods | [[String]](String)| Show tracks with each of the specified moods <br/><br/>Valid values: "Action/Sports", "Adventure/Discovery", "Aerobics/Workout", "Aggressive", "Comedy/Funny", "Crime/Thriller/Spy", "Dark/Somber", "Epic/Orchestral", "Fashion/Lifestyle", "Feel Good", "Gentle/Light", "Happy/Cheerful", "Horror/Scary", "Magical/Mystical", "Military/Patriotic", "Relaxation/Meditation", "Religious/Christian", "Romantic/Sentimental", "Sad/Nostalgic", "Sci-Fi/Future", "Sexy/Sensual", "Strange/Bizarre", "Suspense/Drama", "Underscores", "Uplifting", "Wedding"
  page | Number| Page number, defaults to 1 
  per_page | Number| Number of results per page, defaults to 20 
  query | String| One or more search terms separated by spaces 
@@ -1126,23 +1147,24 @@ Name | Type | Description
  vocal_description | String| Show tracks with the specified vocal description (male, female) 
  view | String| Amount of detail to render in the response, defaults to minimal <br/><br/>Valid values: "minimal", "full"
 
-### Accepted authentication
+### Accepted authentication {#searchAudio-auth}
 
-- [Basic](../README.md#Basic_authentication)
-- [OAuth](../README.md#OAuth_authentication) (No scope required.)
+- Basic
+- OAuth (No scope required.)
 
-### HTTP request headers
+### HTTP request headers {#searchAudio-headers}
 
 
 
 - Accept: application/json
 
-### Return type
+### Return type {#searchAudio-return}
 
-[AudioSearchResults](AudioSearchResults.md)
+[AudioSearchResults](AudioSearchResults)
 
-### Example response
+### Example response {#searchAudio-response}
 
+```
 {
   "per_page" : 6,
   "data" : [ {
@@ -1252,4 +1274,5 @@ Name | Type | Description
   "page" : 0,
   "message" : "message"
 }
+```
 
