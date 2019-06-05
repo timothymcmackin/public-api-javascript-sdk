@@ -59,7 +59,7 @@ No authentication required.
 ### Example response
 
 {
-  &quot;text&quot; : &quot;text&quot;
+  "text" : "text"
 }
 
 <a name="validate"></a>
@@ -98,7 +98,7 @@ api.validate(id, queryParams)
 Name | Type | Description
 ------------- | ------------- | -------------
  id (required) | Number| Integer ID 
- tag | [[String]](String.md)| List of tags 
+ tag | [String]| List of tags 
  user_agent | String| User agent 
 
 ### Accepted authentication
@@ -118,12 +118,12 @@ No authentication required.
 ### Example response
 
 {
-  &quot;query&quot; : {
-    &quot;id&quot; : 0,
-    &quot;tag&quot; : [ &quot;tag&quot;, &quot;tag&quot; ]
+  "query" : {
+    "id" : 0,
+    "tag" : [ "tag", "tag" ]
   },
-  &quot;header&quot; : {
-    &quot;user-agent&quot; : &quot;user-agent&quot;
+  "header" : {
+    "user-agent" : "user-agent"
   }
 }
 
