@@ -25,7 +25,7 @@
     if (!root.ShutterstockApiReference) {
       root.ShutterstockApiReference = {};
     }
-    root.ShutterstockApiReference.Model = factory(root.ShutterstockApiReference.ApiClient);
+    root.ShutterstockApiReference.InstrumentList = factory(root.ShutterstockApiReference.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,47 +34,47 @@
 
 
   /**
-   * The Model model module.
-   * @module model/Model
+   * The InstrumentList model module.
+   * @module model/InstrumentList
    * @version 1.0.13
    */
 
   /**
-   * Constructs a new <code>Model</code>.
-   * Model
-   * @alias module:model/Model
+   * Constructs a new <code>InstrumentList</code>.
+   * List of instruments
+   * @alias module:model/InstrumentList
    * @class
-   * @param id {String} ID of the model
+   * @param data {Array.<String>} List of instruments
    */
-  var exports = function(id) {
+  var exports = function(data) {
     var _this = this;
 
-    _this['id'] = id;
+    _this['data'] = data;
   };
 
   /**
-   * Constructs a <code>Model</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>InstrumentList</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/Model} obj Optional instance to populate.
-   * @return {module:model/Model} The populated <code>Model</code> instance.
+   * @param {module:model/InstrumentList} obj Optional instance to populate.
+   * @return {module:model/InstrumentList} The populated <code>InstrumentList</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+      if (data.hasOwnProperty('data')) {
+        obj['data'] = ApiClient.convertToType(data['data'], ['String']);
       }
     }
     return obj;
   }
 
   /**
-   * ID of the model
-   * @member {String} id
+   * List of instruments
+   * @member {Array.<String>} data
    */
-  exports.prototype['id'] = undefined;
+  exports.prototype['data'] = undefined;
 
 
 

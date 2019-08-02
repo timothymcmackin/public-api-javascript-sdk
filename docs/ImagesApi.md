@@ -96,7 +96,7 @@ No response body.
 
 **Create image collections**
 
-This endpoint creates one or more image collections (lightboxes). To add images to the collections, use &#x60;POST /images/collections/{id}/items&#x60;.
+This endpoint creates one or more image collections (lightboxes). To add images to the collections, use &#x60;POST /v2/images/collections/{id}/items&#x60;.
 
 ### Example
 
@@ -317,9 +317,11 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "url" : "url"
 }
+```
 
 <a name="getFeaturedLightbox"></a>
 # ImagesApi.getFeaturedLightbox
@@ -327,7 +329,7 @@ Name | Type | Description
 
 **Get the details of featured image collections**
 
-This endpoint gets more detailed information about a featured collection, including its cover image and timestamps for its creation and most recent update. To get the images, use &#x60;GET /images/collections/featured/{id}/items&#x60;.
+This endpoint gets more detailed information about a featured collection, including its cover image and timestamps for its creation and most recent update. To get the images, use &#x60;GET /v2/images/collections/featured/{id}/items&#x60;.
 
 ### Example
 
@@ -347,7 +349,7 @@ const queryParams = {
 };
 
 api.getFeaturedLightbox(id, queryParams)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -382,6 +384,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "created_time" : "2000-01-23T04:56:07.000+00:00",
   "updated_time" : "2000-01-23T04:56:07.000+00:00",
@@ -397,6 +400,7 @@ Name | Type | Description
   },
   "total_item_count" : 0
 }
+```
 
 <a name="getFeaturedLightboxItems"></a>
 # ImagesApi.getFeaturedLightboxItems
@@ -424,7 +428,7 @@ const queryParams = {
 };
 
 api.getFeaturedLightboxItems(id, queryParams)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -459,6 +463,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "data" : [ {
     "added_time" : "2016-08-18T18:52:59-04:00",
@@ -472,6 +477,7 @@ Name | Type | Description
   "page" : 1,
   "per_page" : 100
 }
+```
 
 <a name="getFeaturedLightboxList"></a>
 # ImagesApi.getFeaturedLightboxList
@@ -498,7 +504,7 @@ const queryParams = {
 };
 
 api.getFeaturedLightboxList(queryParams)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -533,6 +539,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "per_page" : 1,
   "data" : [ {
@@ -581,6 +588,7 @@ Name | Type | Description
     "items" : [ "{}", "{}" ]
   } ]
 }
+```
 
 <a name="getImage"></a>
 # ImagesApi.getImage
@@ -606,11 +614,12 @@ const api = new sstk.ImagesApi();
 const id = "\"465011609\""; // String | Image ID
 
 const queryParams = { 
+  'language': "\"es\"", // String | Language for the keywords and categories in the response
   'view': "full" // String | Amount of detail to render in the response
 };
 
 api.getImage(id, queryParams)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -625,6 +634,7 @@ api.getImage(id, queryParams)
 Name | Type | Description
 ------------- | ------------- | -------------
  id (required) | String| Image ID 
+ language | String| Language for the keywords and categories in the response <br/><br/>Valid values: "cs", "da", "de", "en", "es", "fi", "fr", "hu", "it", "ja", "ko", "nb", "nl", "pl", "pt", "ru", "sv", "th", "tr", "zh"
  view | String| Amount of detail to render in the response, defaults to full <br/><br/>Valid values: "minimal", "full"
 
 ### Accepted authentication
@@ -644,6 +654,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "has_property_release" : true,
   "model_releases" : [ {
@@ -771,10 +782,11 @@ Name | Type | Description
   "id" : "id",
   "image_type" : "image_type"
 }
+```
 
 <a name="getImageCategories"></a>
 # ImagesApi.getImageCategories
-> `CategoryDataList ImagesApi.getImageCategories()`
+> `CategoryDataList ImagesApi.getImageCategories(queryParams)`
 
 **List image categories**
 
@@ -792,8 +804,13 @@ sstk.setBasicAuth(client_id, client_secret);
 sstk.setAccessToken(process.env.SHUTTERSTOCK_API_TOKEN);
 
 const api = new sstk.ImagesApi();
-api.getImageCategories()
-  .then(({ data }) => {
+
+const queryParams = { 
+  'language': "\"es\"" // String | Language for the keywords and categories in the response
+};
+
+api.getImageCategories(queryParams)
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -804,7 +821,10 @@ api.getImageCategories()
 
 ### Parameters
 
-This endpoint does not accept any parameters.
+
+Name | Type | Description
+------------- | ------------- | -------------
+ language | String| Language for the keywords and categories in the response <br/><br/>Valid values: "cs", "da", "de", "en", "es", "fi", "fr", "hu", "it", "ja", "ko", "nb", "nl", "pl", "pt", "ru", "sv", "th", "tr", "zh"
 
 ### Accepted authentication
 
@@ -823,6 +843,7 @@ This endpoint does not accept any parameters.
 
 ### Example response
 
+```
 {
   "per_page" : 6,
   "data" : [ {
@@ -849,6 +870,7 @@ This endpoint does not accept any parameters.
     "items" : [ "{}", "{}" ]
   } ]
 }
+```
 
 <a name="getImageLicenseList"></a>
 # ImagesApi.getImageLicenseList
@@ -877,7 +899,7 @@ const queryParams = {
 };
 
 api.getImageLicenseList(queryParams)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -916,6 +938,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "per_page" : 6,
   "data" : [ {
@@ -998,6 +1021,7 @@ Name | Type | Description
     "items" : [ "{}", "{}" ]
   } ]
 }
+```
 
 <a name="getImageList"></a>
 # ImagesApi.getImageList
@@ -1027,7 +1051,7 @@ const queryParams = {
 };
 
 api.getImageList(id, queryParams)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -1061,6 +1085,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "per_page" : 6,
   "data" : [ {
@@ -1333,6 +1358,7 @@ Name | Type | Description
     "items" : [ "{}", "{}" ]
   } ]
 }
+```
 
 <a name="getImageRecommendations"></a>
 # ImagesApi.getImageRecommendations
@@ -1363,7 +1389,7 @@ const queryParams = {
 };
 
 api.getImageRecommendations(id, queryParams)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -1398,6 +1424,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "per_page" : 6,
   "data" : [ {
@@ -1422,6 +1449,7 @@ Name | Type | Description
     "items" : [ "{}", "{}" ]
   } ]
 }
+```
 
 <a name="getLightbox"></a>
 # ImagesApi.getLightbox
@@ -1429,7 +1457,7 @@ Name | Type | Description
 
 **Get the details of image collections**
 
-This endpoint gets more detailed information about a collection, including its cover image and timestamps for its creation and most recent update. To get the images in collections, use &#x60;GET /images/collections/{id}/items&#x60;.
+This endpoint gets more detailed information about a collection, including its cover image and timestamps for its creation and most recent update. To get the images in collections, use &#x60;GET /v2/images/collections/{id}/items&#x60;.
 
 ### Example
 
@@ -1449,7 +1477,7 @@ const queryParams = {
 };
 
 api.getLightbox(id, queryParams)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -1486,6 +1514,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "created_time" : "2000-01-23T04:56:07.000+00:00",
   "updated_time" : "2000-01-23T04:56:07.000+00:00",
@@ -1501,6 +1530,7 @@ Name | Type | Description
   },
   "total_item_count" : 0
 }
+```
 
 <a name="getLightboxItems"></a>
 # ImagesApi.getLightboxItems
@@ -1529,7 +1559,7 @@ const queryParams = {
 };
 
 api.getLightboxItems(id, queryParams)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -1567,6 +1597,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "data" : [ {
     "added_time" : "2016-08-18T18:52:59-04:00",
@@ -1580,6 +1611,7 @@ Name | Type | Description
   "page" : 1,
   "per_page" : 100
 }
+```
 
 <a name="getLightboxList"></a>
 # ImagesApi.getLightboxList
@@ -1606,7 +1638,7 @@ const queryParams = {
 };
 
 api.getLightboxList(queryParams)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -1643,6 +1675,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "data" : [ {
     "created_time" : "2014-11-05T19:29:56-05:00",
@@ -1676,6 +1709,7 @@ Name | Type | Description
     "updated_time" : "2014-11-05T19:32:13-05:00"
   } ]
 }
+```
 
 <a name="getSimilarImages"></a>
 # ImagesApi.getSimilarImages
@@ -1701,13 +1735,14 @@ const api = new sstk.ImagesApi();
 const id = "\"465011609\""; // String | Image ID
 
 const queryParams = { 
+  'language': "\"es\"", // String | Language for the keywords and categories in the response
   'page': 1, // Number | Page number
   'per_page': 20, // Number | Number of results per page, defaults to 20
   'view': "minimal" // String | Amount of detail to render in the response
 };
 
 api.getSimilarImages(id, queryParams)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -1722,6 +1757,7 @@ api.getSimilarImages(id, queryParams)
 Name | Type | Description
 ------------- | ------------- | -------------
  id (required) | String| Image ID 
+ language | String| Language for the keywords and categories in the response <br/><br/>Valid values: "cs", "da", "de", "en", "es", "fi", "fr", "hu", "it", "ja", "ko", "nb", "nl", "pl", "pt", "ru", "sv", "th", "tr", "zh"
  page | Number| Page number, defaults to 1 
  per_page | Number| Number of results per page, defaults to 20, defaults to 20 
  view | String| Amount of detail to render in the response, defaults to minimal <br/><br/>Valid values: "minimal", "full"
@@ -1743,6 +1779,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "spellcheck_info" : "{}",
   "per_page" : 3,
@@ -2004,6 +2041,7 @@ Name | Type | Description
   "message" : "message",
   "search_id" : "search_id"
 }
+```
 
 <a name="getUpdatedImages"></a>
 # ImagesApi.getUpdatedImages
@@ -2067,6 +2105,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "per_page" : 6,
   "data" : [ {
@@ -2095,6 +2134,7 @@ Name | Type | Description
     "items" : [ "{}", "{}" ]
   } ]
 }
+```
 
 <a name="licenseImages"></a>
 # ImagesApi.licenseImages
@@ -2127,7 +2167,8 @@ const body = {
 
 const queryParams = {
   "format": "jpg",
-  "size": "huge"
+  "size": "huge",
+  "subscription_id": process.env.SUBSCRIPTION_ID
 };
 
 imagesApi.licenseImages(body, queryParams)
@@ -2173,6 +2214,7 @@ Required scopes:
 
 ### Example response
 
+```
 {
   "per_page" : 5,
   "data" : [ {
@@ -2215,6 +2257,7 @@ Required scopes:
     "items" : [ "{}", "{}" ]
   } ]
 }
+```
 
 <a name="renameLightbox"></a>
 # ImagesApi.renameLightbox
@@ -2297,7 +2340,7 @@ const queryParams = {
 };
 
 imagesApi.searchImages(queryParams)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -2359,6 +2402,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "spellcheck_info" : "{}",
   "per_page" : 3,
@@ -2620,6 +2664,7 @@ Name | Type | Description
   "message" : "message",
   "search_id" : "search_id"
 }
+```
 
 <a name="uploadEphemeralImage"></a>
 # ImagesApi.uploadEphemeralImage
@@ -2688,7 +2733,9 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "id" : "id"
 }
+```
 

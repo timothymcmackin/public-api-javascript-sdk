@@ -10,6 +10,9 @@ Method | HTTP request | Description
 [`deleteSoundboxItems`](AudioApi.md#deleteSoundboxItems) | `DELETE /v2/audio/collections/{id}/items` | Remove audio tracks from collections
 [`downloadTracks`](AudioApi.md#downloadTracks) | `POST /v2/audio/licenses/{id}/downloads` | Download audio tracks
 [`getAudioLicenseList`](AudioApi.md#getAudioLicenseList) | `GET /v2/audio/licenses` | List audio licenses
+[`getGenres`](AudioApi.md#getGenres) | `GET /v2/audio/genres` | List audio genres
+[`getInstruments`](AudioApi.md#getInstruments) | `GET /v2/audio/instruments` | List audio instruments
+[`getMoods`](AudioApi.md#getMoods) | `GET /v2/audio/moods` | List audio moods
 [`getSoundbox`](AudioApi.md#getSoundbox) | `GET /v2/audio/collections/{id}` | Get the details of audio collections
 [`getSoundboxItems`](AudioApi.md#getSoundboxItems) | `GET /v2/audio/collections/{id}/items` | Get the contents of audio collections
 [`getSoundboxList`](AudioApi.md#getSoundboxList) | `GET /v2/audio/collections` | List audio collections
@@ -90,7 +93,7 @@ No response body.
 
 **Create audio collections**
 
-This endpoint creates one or more collections (soundboxes). To add tracks, use &#x60;POST /audio/collections/{id}/items&#x60;.
+This endpoint creates one or more collections (soundboxes). To add tracks, use &#x60;POST /v2/audio/collections/{id}/items&#x60;.
 
 ### Example
 
@@ -139,9 +142,11 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "id" : "48433105"
 }
+```
 
 <a name="deleteSoundbox"></a>
 # AudioApi.deleteSoundbox
@@ -312,9 +317,11 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "url" : "url"
 }
+```
 
 <a name="getAudioLicenseList"></a>
 # AudioApi.getAudioLicenseList
@@ -339,7 +346,7 @@ const queryParams = {
 };
 
 api.getAudioLicenseList(queryParams)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -374,6 +381,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "per_page" : 6,
   "data" : [ {
@@ -456,6 +464,178 @@ Name | Type | Description
     "items" : [ "{}", "{}" ]
   } ]
 }
+```
+
+<a name="getGenres"></a>
+# AudioApi.getGenres
+> `GenreList AudioApi.getGenres()`
+
+**List audio genres**
+
+This endpoint returns a list of all audio genres.
+
+### Example
+
+```javascript
+const sstk = require('shutterstock-api');
+
+// To use HTTP basic authorization:
+sstk.setBasicAuth(client_id, client_secret);
+
+// To use OAuth access token authorization:
+sstk.setAccessToken(process.env.SHUTTERSTOCK_API_TOKEN);
+
+const api = new sstk.AudioApi();
+api.getGenres()
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+
+```
+
+### Parameters
+
+This endpoint does not accept any parameters.
+
+### Accepted authentication
+
+- [Basic](../README.md#Basic_authentication)
+- [OAuth](../README.md#OAuth_authentication) (No scope required.)
+
+### HTTP request headers
+
+
+
+- Accept: application/json
+
+### Return type
+
+[GenreList](GenreList.md)
+
+### Example response
+
+```
+{
+  "data" : [ "Rock" ]
+}
+```
+
+<a name="getInstruments"></a>
+# AudioApi.getInstruments
+> `InstrumentList AudioApi.getInstruments()`
+
+**List audio instruments**
+
+This endpoint returns a list of all audio instruments.
+
+### Example
+
+```javascript
+const sstk = require('shutterstock-api');
+
+// To use HTTP basic authorization:
+sstk.setBasicAuth(client_id, client_secret);
+
+// To use OAuth access token authorization:
+sstk.setAccessToken(process.env.SHUTTERSTOCK_API_TOKEN);
+
+const api = new sstk.AudioApi();
+api.getInstruments()
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+
+```
+
+### Parameters
+
+This endpoint does not accept any parameters.
+
+### Accepted authentication
+
+- [Basic](../README.md#Basic_authentication)
+- [OAuth](../README.md#OAuth_authentication) (No scope required.)
+
+### HTTP request headers
+
+
+
+- Accept: application/json
+
+### Return type
+
+[InstrumentList](InstrumentList.md)
+
+### Example response
+
+```
+{
+  "data" : [ "Electric Guitar" ]
+}
+```
+
+<a name="getMoods"></a>
+# AudioApi.getMoods
+> `MoodList AudioApi.getMoods()`
+
+**List audio moods**
+
+This endpoint returns a list of all audio moods.
+
+### Example
+
+```javascript
+const sstk = require('shutterstock-api');
+
+// To use HTTP basic authorization:
+sstk.setBasicAuth(client_id, client_secret);
+
+// To use OAuth access token authorization:
+sstk.setAccessToken(process.env.SHUTTERSTOCK_API_TOKEN);
+
+const api = new sstk.AudioApi();
+api.getMoods()
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+
+```
+
+### Parameters
+
+This endpoint does not accept any parameters.
+
+### Accepted authentication
+
+- [Basic](../README.md#Basic_authentication)
+- [OAuth](../README.md#OAuth_authentication) (No scope required.)
+
+### HTTP request headers
+
+
+
+- Accept: application/json
+
+### Return type
+
+[MoodList](MoodList.md)
+
+### Example response
+
+```
+{
+  "data" : [ "Aggressive" ]
+}
+```
 
 <a name="getSoundbox"></a>
 # AudioApi.getSoundbox
@@ -463,7 +643,7 @@ Name | Type | Description
 
 **Get the details of audio collections**
 
-This endpoint gets more detailed information about a collection, including the number of items in it and when it was last updated. To get the tracks in collections, use &#x60;GET /audio/collections/{id}/items&#x60;.
+This endpoint gets more detailed information about a collection, including the number of items in it and when it was last updated. To get the tracks in collections, use &#x60;GET /v2/audio/collections/{id}/items&#x60;.
 
 ### Example
 
@@ -479,7 +659,7 @@ const id = "\"48433107\""; // String | Collection ID
 
 
 api.getSoundbox(id)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -514,6 +694,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "created_time" : "2000-01-23T04:56:07.000+00:00",
   "updated_time" : "2000-01-23T04:56:07.000+00:00",
@@ -529,6 +710,7 @@ Name | Type | Description
   },
   "total_item_count" : 0
 }
+```
 
 <a name="getSoundboxItems"></a>
 # AudioApi.getSoundboxItems
@@ -557,7 +739,7 @@ const queryParams = {
 };
 
 api.getSoundboxItems(id, queryParams)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -595,6 +777,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "data" : [ {
     "added_time" : "2016-08-18T18:52:59-04:00",
@@ -608,6 +791,7 @@ Name | Type | Description
   "page" : 1,
   "per_page" : 100
 }
+```
 
 <a name="getSoundboxList"></a>
 # AudioApi.getSoundboxList
@@ -633,7 +817,7 @@ const queryParams = {
 };
 
 api.getSoundboxList(queryParams)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -669,6 +853,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "data" : [ {
     "created_time" : "2014-11-05T19:29:56-05:00",
@@ -702,6 +887,7 @@ Name | Type | Description
     "updated_time" : "2014-11-05T19:32:13-05:00"
   } ]
 }
+```
 
 <a name="getTrack"></a>
 # AudioApi.getTrack
@@ -731,7 +917,7 @@ const queryParams = {
 };
 
 api.getTrack(id, queryParams)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -765,6 +951,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "added_date" : "2016-08-16",
   "album" : {
@@ -817,6 +1004,7 @@ Name | Type | Description
   "vocal_description" : "",
   "url" : "https://www.shutterstock.com/music/track/another-tomorrow/442583"
 }
+```
 
 <a name="getTrackList"></a>
 # AudioApi.getTrackList
@@ -846,7 +1034,7 @@ const queryParams = {
 };
 
 api.getTrackList(id, queryParams)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -880,6 +1068,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "data" : [ {
     "added_date" : "2016-04-12",
@@ -933,6 +1122,7 @@ Name | Type | Description
     "vocal_description" : ""
   } ]
 }
+```
 
 <a name="licenseTrack"></a>
 # AudioApi.licenseTrack
@@ -957,7 +1147,7 @@ const body = {
       "audio_id": "446348",
       "license": "premier_music_comp",
       "metadata": {
-        "purchase_order": "123"
+        "customer_id": "12345"
       }
     }
   ]
@@ -1002,6 +1192,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "data" : [ {
     "audio_id" : "1",
@@ -1010,6 +1201,7 @@ Name | Type | Description
     }
   } ]
 }
+```
 
 <a name="renameSoundbox"></a>
 # AudioApi.renameSoundbox
@@ -1092,7 +1284,7 @@ const queryParams = {
 };
 
 audioApi.searchAudio(queryParams)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -1114,10 +1306,10 @@ Name | Type | Description
  duration | Number| Show tracks with the specified duration (seconds) 
  duration_from | Number| Show tracks with the specified duration or longer (seconds) 
  duration_to | Number| Show tracks with the specified duration or shorter (seconds) 
- genre | [String]| Show tracks with each of the specified genres <br/><br/>Valid values: "Acoustic", "Ambient", "Audio Logo", "Blues", "Chill Out", "Classical", "Corporate", "Country", "Dance/Techno", "Dubstep", "Easy Listening", "Electro Pop", "Electronic", "Folk", "Games", "Hip Hop", "Holiday", "Independent", "Indie Pop", "Jazz", "Kids/Children", "Latin", "Masterworks", "Motown", "New Age", "News", "Piano / Solo Instrumental", "Pop", "Production / Film Scores", "R&B", "Reggae", "Rock", "Trailer", "Vocals", "World"
+ genre | [String]| Show tracks with each of the specified genres; to get the list of genres, use &#x60;GET /v2/audio/genres&#x60; 
  is_instrumental | Boolean| Show instrumental music only 
- instruments | [String]| Show tracks with each of the specified instruments 
- moods | [String]| Show tracks with each of the specified moods <br/><br/>Valid values: "Action/Sports", "Adventure/Discovery", "Aerobics/Workout", "Aggressive", "Comedy/Funny", "Crime/Thriller/Spy", "Dark/Somber", "Epic/Orchestral", "Fashion/Lifestyle", "Feel Good", "Gentle/Light", "Happy/Cheerful", "Horror/Scary", "Magical/Mystical", "Military/Patriotic", "Relaxation/Meditation", "Religious/Christian", "Romantic/Sentimental", "Sad/Nostalgic", "Sci-Fi/Future", "Sexy/Sensual", "Strange/Bizarre", "Suspense/Drama", "Underscores", "Uplifting", "Wedding"
+ instruments | [String]| Show tracks with each of the specified instruments; to get the list of instruments, use &#x60;GET /v2/audio/instruments&#x60; 
+ moods | [String]| Show tracks with each of the specified moods; to get the list of moods, use &#x60;GET /v2/audio/moods&#x60; 
  page | Number| Page number, defaults to 1 
  per_page | Number| Number of results per page, defaults to 20 
  query | String| One or more search terms separated by spaces 
@@ -1125,6 +1317,9 @@ Name | Type | Description
  sort_order | String| Sort order, asc or desc, defaults to desc <br/><br/>Valid values: "asc", "desc"
  vocal_description | String| Show tracks with the specified vocal description (male, female) 
  view | String| Amount of detail to render in the response, defaults to minimal <br/><br/>Valid values: "minimal", "full"
+ fields | String| Fields to display in the response; see the documentation for the fields parameter in the overview section 
+ library | String| Which library to search, defaults to premier <br/><br/>Valid values: "shutterstock", "premier"
+ language | String| Which language to search in 
 
 ### Accepted authentication
 
@@ -1143,6 +1338,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "per_page" : 6,
   "data" : [ {
@@ -1250,6 +1446,8 @@ Name | Type | Description
   } ],
   "total_count" : 1,
   "page" : 0,
-  "message" : "message"
+  "message" : "message",
+  "search_id" : "search_id"
 }
+```
 

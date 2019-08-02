@@ -92,7 +92,7 @@ No response body.
 
 **Create video collections**
 
-This endpoint creates one or more collections (clipboxes). To add videos to collections, use &#x60;POST /videos/collections/{id}/items&#x60;.
+This endpoint creates one or more collections (clipboxes). To add videos to collections, use &#x60;POST /v2/videos/collections/{id}/items&#x60;.
 
 ### Example
 
@@ -141,9 +141,11 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "id" : "48433105"
 }
+```
 
 <a name="deleteClipbox"></a>
 # VideosApi.deleteClipbox
@@ -316,9 +318,11 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "url" : "url"
 }
+```
 
 <a name="getClipbox"></a>
 # VideosApi.getClipbox
@@ -326,7 +330,7 @@ Name | Type | Description
 
 **Get the details of video collections**
 
-This endpoint gets more detailed information about a collection, including the timestamp for its creation and the number of videos in it. To get the videos in collections, use GET /videos/collections/{id}/items.
+This endpoint gets more detailed information about a collection, including the timestamp for its creation and the number of videos in it. To get the videos in collections, use GET /v2/videos/collections/{id}/items.
 
 ### Example
 
@@ -342,7 +346,7 @@ const id = "\"17555176\""; // String | The ID of the collection to return
 
 
 api.getClipbox(id)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -377,6 +381,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "created_time" : "2000-01-23T04:56:07.000+00:00",
   "updated_time" : "2000-01-23T04:56:07.000+00:00",
@@ -392,6 +397,7 @@ Name | Type | Description
   },
   "total_item_count" : 0
 }
+```
 
 <a name="getClipboxItems"></a>
 # VideosApi.getClipboxItems
@@ -420,7 +426,7 @@ const queryParams = {
 };
 
 api.getClipboxItems(id, queryParams)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -458,6 +464,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "data" : [ {
     "added_time" : "2016-08-18T18:52:59-04:00",
@@ -471,6 +478,7 @@ Name | Type | Description
   "page" : 1,
   "per_page" : 100
 }
+```
 
 <a name="getClipboxList"></a>
 # VideosApi.getClipboxList
@@ -496,7 +504,7 @@ const queryParams = {
 };
 
 api.getClipboxList(queryParams)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -532,6 +540,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "data" : [ {
     "created_time" : "2014-11-05T19:29:56-05:00",
@@ -565,6 +574,7 @@ Name | Type | Description
     "updated_time" : "2014-11-05T19:32:13-05:00"
   } ]
 }
+```
 
 <a name="getSimilarVideos"></a>
 # VideosApi.getSimilarVideos
@@ -590,13 +600,14 @@ const api = new sstk.VideosApi();
 const id = "\"2140697\""; // String | The ID of a video for which similar videos should be returned
 
 const queryParams = { 
+  'language': "\"es\"", // String | Language for the keywords and categories in the response
   'page': 1, // Number | Page number
   'per_page': 20, // Number | Number of results per page
   'view': "minimal" // String | Amount of detail to render in the response
 };
 
 api.getSimilarVideos(id, queryParams)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -611,6 +622,7 @@ api.getSimilarVideos(id, queryParams)
 Name | Type | Description
 ------------- | ------------- | -------------
  id (required) | String| The ID of a video for which similar videos should be returned 
+ language | String| Language for the keywords and categories in the response <br/><br/>Valid values: "cs", "da", "de", "en", "es", "fi", "fr", "hu", "it", "ja", "ko", "nb", "nl", "pl", "pt", "ru", "sv", "th", "tr", "zh"
  page | Number| Page number, defaults to 1 
  per_page | Number| Number of results per page, defaults to 20 
  view | String| Amount of detail to render in the response, defaults to minimal <br/><br/>Valid values: "minimal", "full"
@@ -632,6 +644,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "per_page" : 9,
   "data" : [ {
@@ -817,6 +830,7 @@ Name | Type | Description
   "page" : 7,
   "message" : "message"
 }
+```
 
 <a name="getUpdatedVideos"></a>
 # VideosApi.getUpdatedVideos
@@ -864,7 +878,8 @@ Name | Type | Description
 
 ### Accepted authentication
 
-No authentication required.
+- [Basic](../README.md#Basic_authentication)
+- [OAuth](../README.md#OAuth_authentication) (No scope required.)
 
 ### HTTP request headers
 
@@ -878,6 +893,7 @@ No authentication required.
 
 ### Example response
 
+```
 {
   "per_page" : 6,
   "data" : [ {
@@ -906,6 +922,7 @@ No authentication required.
     "items" : [ "{}", "{}" ]
   } ]
 }
+```
 
 <a name="getVideo"></a>
 # VideosApi.getVideo
@@ -931,11 +948,12 @@ const api = new sstk.VideosApi();
 const id = "\"30867073\""; // String | Video ID
 
 const queryParams = { 
+  'language': "\"es\"", // String | Language for the keywords and categories in the response
   'view': "full" // String | Amount of detail to render in the response
 };
 
 api.getVideo(id, queryParams)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -950,6 +968,7 @@ api.getVideo(id, queryParams)
 Name | Type | Description
 ------------- | ------------- | -------------
  id (required) | String| Video ID 
+ language | String| Language for the keywords and categories in the response <br/><br/>Valid values: "cs", "da", "de", "en", "es", "fi", "fr", "hu", "it", "ja", "ko", "nb", "nl", "pl", "pt", "ru", "sv", "th", "tr", "zh"
  view | String| Amount of detail to render in the response, defaults to full <br/><br/>Valid values: "minimal", "full"
 
 ### Accepted authentication
@@ -969,6 +988,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "has_property_release" : true,
   "aspect_ratio" : "aspect_ratio",
@@ -1059,10 +1079,11 @@ Name | Type | Description
   } ],
   "id" : "id"
 }
+```
 
 <a name="getVideoCategories"></a>
 # VideosApi.getVideoCategories
-> `CategoryDataList VideosApi.getVideoCategories()`
+> `CategoryDataList VideosApi.getVideoCategories(queryParams)`
 
 **List video categories**
 
@@ -1080,8 +1101,13 @@ sstk.setBasicAuth(client_id, client_secret);
 sstk.setAccessToken(process.env.SHUTTERSTOCK_API_TOKEN);
 
 const api = new sstk.VideosApi();
-api.getVideoCategories()
-  .then(({ data }) => {
+
+const queryParams = { 
+  'language': "\"es\"" // String | Language for the keywords and categories in the response
+};
+
+api.getVideoCategories(queryParams)
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -1092,7 +1118,10 @@ api.getVideoCategories()
 
 ### Parameters
 
-This endpoint does not accept any parameters.
+
+Name | Type | Description
+------------- | ------------- | -------------
+ language | String| Language for the keywords and categories in the response <br/><br/>Valid values: "cs", "da", "de", "en", "es", "fi", "fr", "hu", "it", "ja", "ko", "nb", "nl", "pl", "pt", "ru", "sv", "th", "tr", "zh"
 
 ### Accepted authentication
 
@@ -1111,6 +1140,7 @@ This endpoint does not accept any parameters.
 
 ### Example response
 
+```
 {
   "per_page" : 6,
   "data" : [ {
@@ -1137,6 +1167,7 @@ This endpoint does not accept any parameters.
     "items" : [ "{}", "{}" ]
   } ]
 }
+```
 
 <a name="getVideoLicenseList"></a>
 # VideosApi.getVideoLicenseList
@@ -1165,7 +1196,7 @@ const queryParams = {
 };
 
 api.getVideoLicenseList(queryParams)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -1204,6 +1235,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "per_page" : 6,
   "data" : [ {
@@ -1286,6 +1318,7 @@ Name | Type | Description
     "items" : [ "{}", "{}" ]
   } ]
 }
+```
 
 <a name="getVideoList"></a>
 # VideosApi.getVideoList
@@ -1315,7 +1348,7 @@ const queryParams = {
 };
 
 api.getVideoList(id, queryParams)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -1349,6 +1382,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "per_page" : 6,
   "data" : [ {
@@ -1547,6 +1581,7 @@ Name | Type | Description
     "items" : [ "{}", "{}" ]
   } ]
 }
+```
 
 <a name="licenseVideos"></a>
 # VideosApi.licenseVideos
@@ -1623,6 +1658,7 @@ Required scopes:
 
 ### Example response
 
+```
 {
   "per_page" : 1,
   "data" : [ {
@@ -1665,6 +1701,7 @@ Required scopes:
     "items" : [ "{}", "{}" ]
   } ]
 }
+```
 
 <a name="renameClipbox"></a>
 # VideosApi.renameClipbox
@@ -1747,7 +1784,7 @@ const queryParams = {
 };
 
 videosApi.searchVideos(queryParams)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -1807,6 +1844,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "per_page" : 9,
   "data" : [ {
@@ -1992,4 +2030,5 @@ Name | Type | Description
   "page" : 7,
   "message" : "message"
 }
+```
 

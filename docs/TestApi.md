@@ -26,7 +26,7 @@ const queryParams = {
 };
 
 api.echo(queryParams)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -58,9 +58,11 @@ No authentication required.
 
 ### Example response
 
+```
 {
   "text" : "text"
 }
+```
 
 <a name="validate"></a>
 # TestApi.validate
@@ -83,7 +85,7 @@ const queryParams = {
 };
 
 api.validate(id, queryParams)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -117,6 +119,7 @@ No authentication required.
 
 ### Example response
 
+```
 {
   "query" : {
     "id" : 0,
@@ -126,4 +129,5 @@ No authentication required.
     "user-agent" : "user-agent"
   }
 }
+```
 

@@ -30,7 +30,7 @@ const body = new ShutterstockApiReference.UserPostRequest(); // UserPostRequest 
 
 
 api.createUser(body)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -63,9 +63,11 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "id" : "id"
 }
+```
 
 <a name="getAccessToken"></a>
 # UsersApi.getAccessToken
@@ -83,7 +85,7 @@ sstk.setAccessToken(process.env.SHUTTERSTOCK_API_TOKEN);
 
 const api = new sstk.UsersApi();
 api.getAccessToken()
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -113,6 +115,7 @@ This endpoint does not accept any parameters.
 
 ### Example response
 
+```
 {
   "user_id" : "user_id",
   "organization_id" : "organization_id",
@@ -124,6 +127,7 @@ This endpoint does not accept any parameters.
   "contributor_id" : "contributor_id",
   "username" : "username"
 }
+```
 
 <a name="getUser"></a>
 # UsersApi.getUser
@@ -141,7 +145,7 @@ sstk.setAccessToken(process.env.SHUTTERSTOCK_API_TOKEN);
 
 const api = new sstk.UsersApi();
 api.getUser()
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -173,6 +177,7 @@ This endpoint does not accept any parameters.
 
 ### Example response
 
+```
 {
   "only_enhanced_license" : true,
   "is_premier_parent" : true,
@@ -190,6 +195,7 @@ This endpoint does not accept any parameters.
   "contributor_id" : "contributor_id",
   "username" : "username"
 }
+```
 
 <a name="getUserSubsciptionList"></a>
 # UsersApi.getUserSubsciptionList
@@ -207,7 +213,7 @@ sstk.setAccessToken(process.env.SHUTTERSTOCK_API_TOKEN);
 
 const api = new sstk.UsersApi();
 api.getUserSubsciptionList()
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -239,6 +245,7 @@ This endpoint does not accept any parameters.
 
 ### Example response
 
+```
 {
   "per_page" : 5,
   "data" : [ {
@@ -317,4 +324,5 @@ This endpoint does not accept any parameters.
     "items" : [ "{}", "{}" ]
   } ]
 }
+```
 

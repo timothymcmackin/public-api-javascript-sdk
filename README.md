@@ -6,7 +6,7 @@ These classes call the API in the same way that direct REST calls do.
 You can use this SDK to search for media, get information about media and about collections, and (if your subscription permits) license and download media.
 This is the official SDK provided by Shutterstock for its API.
 
-- API version: 1.0.5
+- API version: 1.0.13
 
 ## References
 
@@ -15,26 +15,6 @@ This is the official SDK provided by Shutterstock for its API.
 - To provide feedback or bug reports about the API and this SDK, see https://api-feedback.shutterstock.com.
 - For the status of the API, see [API status](https://status.developers.shutterstock.com/).
 - For the source code, see https://github.com/shutterstock/public-api-javascript-sdk.
-
-## Contributing
-
-- This SDK is generated at [shutterstock/public-api-sdk-generator](https://github.com/shutterstock/public-api-sdk-generator), please make changes to SDK there.
-- Changes to tests can be made directly here.
-
-## Tests
-
-To run the tests, you must authenticate with the Shutterstock API, get a token, and put the token in the `SHUTTERSTOCK_API_TOKEN` environment variable. See [Authentication](https://api-reference.shutterstock.com/#authentication).
-
-```
-$ SHUTTERSTOCK_API_TOKEN="Your API Key"
-$ yarn run test
-```
-
-## Linting
-
-```
-$ yarn run lint
-```
 
 ## Subscriptions
 
@@ -123,6 +103,35 @@ The following list shows the available scopes.
 - user.view: Grants read-only access to a user&#39;s basic account information (includes username, id, first and last name). If email is the same as username, it also implies user.email
 
 
+## Languages
+
+You can provide search keywords in languages other than English by specifying the two-character language code in the `language` query parameter.
+If you set this parameter or header, you can also pass category names in that language.
+The response includes categories and keywords in that language.
+
+For the list of languages that the API accepts, see the [Language](https://api-reference.shutterstock.com/#schema-language) schema.
+
+## Licensing sandbox
+
+To use the licensing sandbox API instead of the main API, use the `setSandbox` method.
+For more information on the sandbox API, see [Licensing sandbox](https://api-reference.shutterstock.com/#licensing-and-downloading-licensing-sandbox) in the API reference.
+
+```javascript
+const sstk = require('shutterstock-api');
+
+sstk.setSandbox(true);
+
+sstk.setAccessToken(process.env.SHUTTERSTOCK_API_TOKEN);
+
+const api = new sstk.ImagesApi();
+```
+
+To go back to the main API, call the `setSandbox` method again and pass `false`.
+
+```javascript
+sstk.setSandbox(false);
+```
+
 ## Examples
 
 Follow the [installation](#installation) instructions and use the SDK in your JavaScript code as in these examples.
@@ -156,7 +165,7 @@ api.searchImages(queryParams)
 
 The next example requests a license for an image.
 
-For POST requests like this one, you must create an object of the appropriate class to pass as the request body.
+For POST requests like this one, you create an object of the appropriate class to pass as the request body.
 In this case, the `shutterstock-api.ImagesApi.licenseImages` method accepts a body parameter of the class `shutterstock-api.LicenseImageRequest`.
 This parameter is an array of objects of the class `shutterstock-api.LicenseImage`, each of which has the ID of an image to license.
 The reference information for each method shows the class for the body parameter.
@@ -175,7 +184,7 @@ const imageToLicense = new sstk.LicenseImage(imageId);
 const body = new sstk.LicenseImageRequest([imageToLicense]);
 
 const queryParams = {
-  subscriptionId: process.env.SHUTTERSTOCK_SUBSCRIPTION_ID,
+  subscription_id: process.env.SUBSCRIPTION_ID,
   format: 'jpg',
   size: 'huge'
 };
@@ -187,6 +196,64 @@ api.licenseImages(body, queryParams)
   .catch((error) => {
     console.error(error);
   });
+```
+
+Instead of using objects for the body, you can also pass a JavaScript object literal that has the data that the API expects in the body.
+For information about the body format, see the [API reference](https://api-reference.shutterstock.com) for the related API endpoint.
+For example, this licensing request passes information about the images to license in a JavaScript object literal:
+
+```javascript
+const sstk = require('shutterstock-api');
+
+sstk.setAccessToken(process.env.SHUTTERSTOCK_API_TOKEN);
+
+const imagesApi = new sstk.ImagesApi();
+
+const body = {
+  images: [
+    {
+      image_id: '419235589',
+      price: 12.50,
+      metadata: {
+        customer_id: '12345'
+      }
+    }
+  ]
+};
+
+const queryParams = {
+  format: 'jpg',
+  size: 'huge',
+  subscription_id: process.env.SUBSCRIPTION_ID
+};
+
+imagesApi.licenseImages(body, queryParams)
+  .then(({ data }) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+## Contributing
+
+- This SDK is generated at [shutterstock/public-api-sdk-generator](https://github.com/shutterstock/public-api-sdk-generator), please make changes to SDK there.
+- Changes to tests can be made directly here.
+
+## Tests
+
+To run the tests, you must authenticate with the Shutterstock API, get a token, and put the token in the `SHUTTERSTOCK_API_TOKEN` environment variable. See [Authentication](https://api-reference.shutterstock.com/#authentication).
+
+```
+$ SHUTTERSTOCK_API_TOKEN="Your API Key"
+$ yarn run test
+```
+
+## Linting
+
+```
+$ yarn run lint
 ```
 
 ## Documentation for methods
@@ -201,6 +268,9 @@ Class | Method | HTTP request | Description
 *shutterstock-api.AudioApi* | [**deleteSoundboxItems**](https://github.com/shutterstock/public-api-javascript-sdk/blob/master/docs/AudioApi.md#deleteSoundboxItems) | **DELETE** /v2/audio/collections/{id}/items | Remove audio tracks from collections
 *shutterstock-api.AudioApi* | [**downloadTracks**](https://github.com/shutterstock/public-api-javascript-sdk/blob/master/docs/AudioApi.md#downloadTracks) | **POST** /v2/audio/licenses/{id}/downloads | Download audio tracks
 *shutterstock-api.AudioApi* | [**getAudioLicenseList**](https://github.com/shutterstock/public-api-javascript-sdk/blob/master/docs/AudioApi.md#getAudioLicenseList) | **GET** /v2/audio/licenses | List audio licenses
+*shutterstock-api.AudioApi* | [**getGenres**](https://github.com/shutterstock/public-api-javascript-sdk/blob/master/docs/AudioApi.md#getGenres) | **GET** /v2/audio/genres | List audio genres
+*shutterstock-api.AudioApi* | [**getInstruments**](https://github.com/shutterstock/public-api-javascript-sdk/blob/master/docs/AudioApi.md#getInstruments) | **GET** /v2/audio/instruments | List audio instruments
+*shutterstock-api.AudioApi* | [**getMoods**](https://github.com/shutterstock/public-api-javascript-sdk/blob/master/docs/AudioApi.md#getMoods) | **GET** /v2/audio/moods | List audio moods
 *shutterstock-api.AudioApi* | [**getSoundbox**](https://github.com/shutterstock/public-api-javascript-sdk/blob/master/docs/AudioApi.md#getSoundbox) | **GET** /v2/audio/collections/{id} | Get the details of audio collections
 *shutterstock-api.AudioApi* | [**getSoundboxItems**](https://github.com/shutterstock/public-api-javascript-sdk/blob/master/docs/AudioApi.md#getSoundboxItems) | **GET** /v2/audio/collections/{id}/items | Get the contents of audio collections
 *shutterstock-api.AudioApi* | [**getSoundboxList**](https://github.com/shutterstock/public-api-javascript-sdk/blob/master/docs/AudioApi.md#getSoundboxList) | **GET** /v2/audio/collections | List audio collections

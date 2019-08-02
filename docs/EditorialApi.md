@@ -39,7 +39,7 @@ const country = "\"USA\""; // String | Returns only if the content is available 
 
 
 api.getEditorialImage(id, country)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -73,6 +73,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "assets" : {
     "thumb_220" : {
@@ -137,6 +138,7 @@ Name | Type | Description
   "byline" : "byline",
   "date_taken" : "2000-01-23"
 }
+```
 
 <a name="getEditorialLivefeed"></a>
 # EditorialApi.getEditorialLivefeed
@@ -163,7 +165,7 @@ const country = "\"USA\""; // String | Returns only if the livefeed is available
 
 
 api.getEditorialLivefeed(id, country)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -197,6 +199,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "created_time" : "2000-01-23T04:56:07.000+00:00",
   "name" : "name",
@@ -209,6 +212,7 @@ Name | Type | Description
   },
   "total_item_count" : 1
 }
+```
 
 <a name="getEditorialLivefeedItems"></a>
 # EditorialApi.getEditorialLivefeedItems
@@ -235,7 +239,7 @@ const country = "\"USA\""; // String | Returns only if the livefeed items are av
 
 
 api.getEditorialLivefeedItems(id, country)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -269,6 +273,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "per_page" : 6,
   "data" : [ {
@@ -415,6 +420,7 @@ Name | Type | Description
     "items" : [ "{}", "{}" ]
   } ]
 }
+```
 
 <a name="getEditorialLivefeedList"></a>
 # EditorialApi.getEditorialLivefeedList
@@ -443,7 +449,7 @@ const queryParams = {
 };
 
 api.getEditorialLivefeedList(country, queryParams)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -478,6 +484,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "per_page" : 5,
   "data" : [ {
@@ -507,6 +514,7 @@ Name | Type | Description
   "page" : 5,
   "message" : "message"
 }
+```
 
 <a name="licenseEditorialImage"></a>
 # EditorialApi.licenseEditorialImage
@@ -572,6 +580,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "per_page" : 1,
   "data" : [ {
@@ -606,6 +615,7 @@ Name | Type | Description
     "items" : [ "{}", "{}" ]
   } ]
 }
+```
 
 <a name="searchEditorial"></a>
 # EditorialApi.searchEditorial
@@ -634,7 +644,7 @@ const queryParams = {
 const country = "USA";
 
 editorialApi.searchEditorial(country, queryParams)
-  .then(({ data }) => {
+  .then((data) => {
     console.log(data);
   })
   .catch((error) => {
@@ -676,6 +686,7 @@ Name | Type | Description
 
 ### Example response
 
+```
 {
   "next" : "next",
   "per_page" : 1,
@@ -812,4 +823,5 @@ Name | Type | Description
   "message" : "message",
   "search_id" : "search_id"
 }
+```
 
